@@ -88,7 +88,7 @@ textarea#styled1 {
 	text-align: left;
 }
 
-.concept-content {
+.concept-content, .content {
 	font-weight: 500;
 	line-height: 21px;
 	margin: 8px;
