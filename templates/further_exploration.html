@@ -1,0 +1,14 @@
+
+
+The first thing I tried was collapsing the divs in my notes. I found some code to implement it at
+http://designgala.com/how-to-expand-collapse-toggle-div-layer-using-jquery/.
+jQuery(document).ready(function() {
+  jQuery(".wrapper").hide();
+  jQuery(".lesson-header").click(function()
+  {
+    jQuery(this).next(".wrapper").slideToggle(10);
+  });
+});
+It worked. First I tried collasping each individual concept, but didn't like the way it looked at all. Then, I tried collapsing each lessson. That worked too, but it looked awful and it made my tables of contents non-functional, because they were pointing to hidden elements.
+
+So, I gave up on the idea of collapsing divs. I had two other things I wanted to try out: Making the table of contents sidebar the same height as my content, and making the sub-content in the table of contents collapse.
