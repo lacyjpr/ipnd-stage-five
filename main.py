@@ -47,6 +47,11 @@ class StageFour(Handler):
     def get(self):
         self.render("stage_four.html")
 
+class StageFive(Handler):
+    """Renders stage_five to the browser"""
+    def get(self):
+        self.render("stage_five.html")
+
 # Copied from Udacity's wallbook example.
 def bulletinboard_key(bulletinboard_name= "ipnd_bb"):
     """Constructs a Datastore key for a Bulletinboard entity.
@@ -148,6 +153,7 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                ('/stage2', StageTwo),
                                ('/stage3', StageThree),
                                ('/stage4', StageFour),
+                               ('/stage5', StageFive),
                                ('/entry', BulletinBoard)
                                ],
                               debug=True)
