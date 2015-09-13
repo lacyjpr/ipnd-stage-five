@@ -8,8 +8,15 @@ $(document).ready(function(){
 });
 
 //Accordion widget for the sidebar
-$(document).ready(function() {
-	$( "#accordion" ).accordion();
-	heightStyle: "fill"
-});
-
+// $(function() {
+// 	$( "#accordion" ).accordion();
+// 		heightStyle: "content",
+// 		collapsible: true,
+// 		active: false
+// 	});
+// });
+	$(function() {
+		$( "#accordion" ).accordion({
+		heightStyle: "content"
+		});
+	});
