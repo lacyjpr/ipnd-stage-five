@@ -1,7 +1,24 @@
 
 
+
+		<div class="concept" id="stage-5-6-1">
+			<div class="concept-title">Exploration</div>
+			<div class="concept-content">
+https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/JavaScript_basics
+https://www.udacity.com/course/javascript-basics--ud804
+https://www.codecademy.com/tracks/javascript
+
+
+http://learn.jquery.com/about-jquery/
+https://www.udacity.com/course/intro-to-jquery--ud245<div>
+	<div>
+
+
+		<div class="concept" id="stage-5-6-1">
+			<div class="concept-title">Experimentation</div>
+			<div class="concept-content">
 The first thing I tried was collapsing the divs in my notes. I found some code to implement it at
-http://designgala.com/how-to-expand-collapse-toggle-div-layer-using-jquery/.
+<a target="_blank" href="http://designgala.com/how-to-expand-collapse-toggle-div-layer-using-jquery/">designgala.com</a>.
 jQuery(document).ready(function() {
   jQuery(".wrapper").hide();
   jQuery(".lesson-header").click(function()
@@ -9,6 +26,16 @@ jQuery(document).ready(function() {
     jQuery(this).next(".wrapper").slideToggle(10);
   });
 });
-It worked. First I tried collasping each individual concept, but didn't like the way it looked at all. Then, I tried collapsing each lessson. That worked too, but it looked awful and it made my tables of contents non-functional, because they were pointing to hidden elements.
+It worked. First I tried collapsing each individual concept, but didn't like the way it looked at all. Then, I tried collapsing each lesson. That worked too, but it looked awful and it made my tables of contents non-functional, because they were pointing to hidden elements.
 
 So, I gave up on the idea of collapsing divs. I had two other things I wanted to try out: Making the table of contents sidebar the same height as my content, and making the sub-content in the table of contents collapse.
+
+The table of contents sidebar height had been bothering me for a long time. You can see what my sidebars looked like before at stage-four.appspot.com. Navigate to one of the notes pages. The sidebar runs out long before the content does, leaving a long expanse of white space on the right. It looks terrible to me. I had tried to fix it before with pure CSS, and never came up with a suitable solution.
+
+So, I googled "jquery sidebar 100 height," and came to this page: <a target="_blank" href="http://www.mikedoesweb.com/2011/100-height-div-with-2-lines-of-code/">100% Height Div with 2 lines of code</a> I found this jQuery code:
+$(document).ready(function(){
+$("#side").height( $("#main").height() );
+});
+I changed the names of the selectors to ".sidebar" and ".stage", added a .stage div that wrapped around all of my content, and stuck the JS code in my script.js file.
+It worked, sort of. I had two problems: First, The length of the sidebar was about 20 pixels longer than the content. Then I remembered the "Sizing Boxes" concept from stage 1. I hadn't used box-sizing: border-box;, so when the JS was setting the height of my sidebar, it was setting the height of the content. CSS was adding the height of my padding and border. I went to my .sidebar css. Turns out I had eliminated border for layout purposes, but kept padding: 10px; to keep things contained. Next time I'm using border-box, but I'm not going to re-do my entire layout now. I added padding-top: 0px; and padding-bottom: 0px; and voila, the sidebar height was the same! padding-top: 0px; didn't mess up my layout at the top because the h2 I had there had a padding and margin of its own.
+The second problem: On my main page, the content is shorter than the sidebar. So when I tried out the code on that page, the JS cut off the sidebar short. Because I was using template inheritance and the JavaScript was in my base.html, I decided to just not wrap the content on that page in a .stage div so the JavaScript wouldn't do anything.
