@@ -7,7 +7,10 @@
 //   });
 // });
 
-//borrowed from http://www.mikedoesweb.com/2011/100-height-div-with-2-lines-of-code/
+//Borrowed from http://www.mikedoesweb.com/2011/100-height-div-with-2-lines-of-code/
+//Code inside $(document).ready only runs when the DOM is ready for JS to execute
+//In this case, when the content of both divs has fully loaded
 $(document).ready(function(){
+//set sidebar height to 100% of stage height
     $(".sidebar").height( $(".stage").height() );
 });
