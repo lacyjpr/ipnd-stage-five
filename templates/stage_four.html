@@ -7,141 +7,155 @@ IPND Stage 4 Notes
 {% block content %}
 	<h1>IPND Notes Stage 4: Allow Comments</h1>
 	<div class="sidebar">
-		<nav>
-			<h2>Table of Contents</h2>
-				<ul>
-					<li><a href="#stage-4-1"><strong>Stage 4.1 Introduction to Networks</strong></a>
-						<ol>
-							<li><a href="#stage-4-1-1">Networks</a></li>
-							<li><a href="#stage-4-1-2">Network History</a></li>
-							<li><a href="#stage-4-1-3">Smoke Signals</a></li>
-							<li><a href="#stage-4-1-4">Latency</a></li>
-							<li><a href="#stage-4-1-5">Bandwidth</a></li>
-							<li><a href="#stage-4-1-6">Bits</a></li>
-							<li><a href="#stage-4-1-7">Buckets of Bits</a></li>
-							<li><a href="#stage-4-1-8">Making a Network</a></li>
-							<li><a href="#stage-4-1-9">Protocols</a></li>
-						</ol>
-					</li><!--Stage 4.1 table ends here-->
-					<li><a href="#stage-4-2"><strong>Stage 4.2 Make the Internet Work for You</strong></a>
-						<ol>
-							<li><a href="#stage-4-2-1">Document Structure</a></li>
-							<li><a href="#stage-4-2-2">Introducing URLs</a></li>
-							<li><a href="#stage-4-2-3">Query Parameters</a></li>
-							<li><a href="#stage-4-2-4">Fragments</a></li>
-							<li><a href="#stage-4-2-5">Port</a></li>
-							<li><a href="#stage-4-2-6">Get</a></li>
-							<li><a href="#stage-4-2-7">Making Requests</a></li>
-							<li><a href="#stage-4-2-8">User Agent Header</a></li>
-							<li><a href="#stage-4-2-9">HTTP Responses</a></li>
-							<li><a href="#stage-4-2-10">Response Headers</a></li>
-							<li><a href="#stage-4-2-11">Web Applications</a></li>
-						</ol>
-					</li><!--Stage 4.2 table ends here-->
-					<li><a href="#stage-4-3"><strong>Stage 4.3 Forms</strong></a>
-						<ol>
-							<li><a href="#stage-4-3-1">Introduction</a></li>
-							<li><a href="#stage-4-3-2">Forms</a></li>
-							<li><a href="#stage-4-3-3">Naming Input</a></li>
-							<li><a href="#stage-4-3-4">Submitting Input</a></li>
-							<li><a href="#stage-4-3-5">The Action Attribute</a></li>
-							<li><a href="#stage-4-3-6">URL Encoding</a></li>
-							<li><a href="#stage-4-3-7">Passwords</a></li>
-							<li><a href="#stage-4-3-8">Checkboxes</a></li>
-							<li><a href="#stage-4-3-9">Multiple Checkboxes</a></li>
-							<li><a href="#stage-4-3-10">Radio Buttons</a></li>
-							<li><a href="#stage-4-3-11">Radio Button Values</a></li>
-							<li><a href="#stage-4-3-12">Label Elements</a></li>
-							<li><a href="#stage-4-3-13">Dropdowns</a></li>
-							<li><a href="#stage-4-3-14">Dropdowns and Values</a></li>
-						</ol>
-					</li><!--Stage 4.3 table ends here-->
-					<li><a href="#stage-4-4"><strong>Stage 4.4 Python Break-Modulus &amp; Dictionaries</strong></a>
-						<ol>
-							<li><a href="#stage-4-4-1">The Modulus Operator</a></li>
-							<li><a href="#stage-4-4-2">Dictionaries</a></li>
-							<li><a href="#stage-4-4-3">Using Dictionaries</a></li>
-							<li><a href="#stage-4-4-4">A Noble Gas</a></li>
-						</ol>
-					</li><!--Stage 4.4 table ends here-->
-					<li><a href="#stage-4-5"><strong>Stage 4.5 Working with App Engine</strong></a>
-						<ol>
-							<li><a href="#stage-4-5-1">Hello Webapp World</a></li>
-							<li><a href="#stage-4-5-2">Content Type</a></li>
-							<li><a href="#stage-4-5-3">More Handlers</a></li>
-							<li><a href="#stage-4-5-4">The Method Attribute</a></li>
-							<li><a href="#stage-4-5-5">Differences Between Get and Post</a></li>
-							<li><a href="#stage-4-5-6">Problems with Get</a></li>
-						</ol>
-					</li><!--Stage 4.5 table ends here-->
-					<li><a href="#stage-4-6"><strong>Stage 4.6 Validation</strong></a>
-						<ol>
-							<li><a href="#stage-4-6-1">Validation</a></li>
-							<li><a href="#stage-4-6-2">What Is Your Birthday</a></li>
-							<li><a href="#stage-4-6-3">Handling Bad Data</a></li>
-							<li><a href="#stage-4-6-4">Valid Month</a></li>
-							<li><a href="#stage-4-6-5">Valid Day</a></li>
-							<li><a href="#stage-4-6-6">Valid Year</a></li>
-							<li><a href="#stage-4-6-7">Checking Validation</a></li>
-							<li><a href="#stage-4-6-8">Responding Based On Verification</a></li>
-							<li><a href="#stage-4-6-9">String Substitution</a></li>
-							<li><a href="#stage-4-6-10">Substituting Multiple Strings</a></li>
-							<li><a href="#stage-4-6-11">Advanced String Substitution</a></li>
-							<li><a href="#stage-4-6-12">Substituting Into Our Form</a></li>
-							<li><a href="#stage-4-6-13">Preserving User Input</a></li>
-							<li><a href="#stage-4-6-14">Problems With HTML Input</a></li>
-							<li><a href="#stage-4-6-15">Handling HTML Input</a></li>
-							<li><a href="#stage-4-6-16">HTML Escaping</a></li>
-							<li><a href="#stage-4-6-17">Using HTML Escaping</a></li>
-							<li><a href="#stage-4-6-18">Implementing HTML Escaping</a></li>
-							<li><a href="#stage-4-6-19">Problems Reinventing the Wheel</a></li>
-							<li><a href="#stage-4-6-20">Current Limitations</a></li>
-							<li><a href="#stage-4-6-21">Redirection</a></li>
-							<li><a href="#stage-4-6-22">Redirection Advantages</a></li>
-							<li><a href="#stage-4-6-23">Implementing Redirection</a></li>
-						</ol>
-					</li><!--stage 4.6 table ends here-->
-					<li><a href="#stage-4-7"><strong>Stage 4.7 HTML Templates</strong></a>
-						<ol>
-							<li><a href="#stage-4-7-1">Writing a Basic Form</a></li>
-							<li><a href="#stage-4-7-2">Hidden Inputs</a></li>
-							<li><a href="#stage-4-7-3">Shopping List Take 1</a></li>
-							<li><a href="#stage-4-7-4">Possible Problems</a></li>
-							<li><a href="#stage-4-7-5">Introducing Templates</a></li>
-							<li><a href="#stage-4-7-6">Template Refactor</a></li>
-							<li><a href="#stage-4-7-7">Variable Substitution</a></li>
-							<li><a href="#stage-4-7-8">Statement Syntax</a></li>
-							<li><a href="#stage-4-7-9">Templates and Types</a></li>
-							<li><a href="#stage-4-7-10">For Loop Syntax</a></li>
-							<li><a href="#stage-4-7-11">FizzBuzz</a></li>
-							<li><a href="#stage-4-7-12">Shopping List Take 2</a></li>
-							<li><a href="#stage-4-7-13">Escaping Templates</a></li>
-							<li><a href="#stage-4-7-14">Helpful Tips</a></li>
-							<li><a href="#stage-4-7-15">Template Inheritance</a></li>
-							<li><a href="#stage-4-7-16">Conclusion</a></li>
-						</ol>
-					</li><!--stage 4.7 table ends here-->
-					<li><a href="#stage-4-8"><strong>Stage 4.8 Databases</strong></a>
-						<ol>
-							<li><a href="#stage-4-8-1">Databases</a></li>
-							<li><a href="#stage-4-8-2">Databases Continued</a></li>
-							<li><a href="#stage-4-8-3">Tables</a></li>
-							<li><a href="#stage-4-8-4">Why Databases</a></li>
-							<li><a href="#stage-4-8-5">Types of Databases</a></li>
-							<li><a href="#stage-4-8-6">SQL</a></li>
-							<li><a href="#stage-4-8-7">More Advanced SQL</a></li>
-							<li><a href="#stage-4-8-8">Order By</a></li>
-							<li><a href="#stage-4-8-9">Joins</a></li>
-							<li><a href="#stage-4-8-10">Indexes</a></li>
-							<li><a href="#stage-4-8-11">Real-World Example</a></li>
-							<li><a href="#stage-4-8-12">Indexes for Sorting</a></li>
-							<li><a href="#stage-4-8-13">Another Real-World Example</a></li>
-							<li><a href="#stage-4-8-14">ACID</a></li>
-							<li><a href="#stage-4-8-15">Google App Engine Datastore</a></li>
-						</ol>
-					</li><!--stage 4.8 table ends here-->
-				</ul>
-		</nav>
+		<h2>Navigation</h2>
+		<div id="accordion">
+
+			<h3>Stage 4.1</h3>
+			<div>
+			<a href="#stage-4-1"><strong>Introduction to Networks</strong></a>
+				<ol>
+					<li><a href="#stage-4-1-1">Networks</a></li>
+					<li><a href="#stage-4-1-2">Network History</a></li>
+					<li><a href="#stage-4-1-3">Smoke Signals</a></li>
+					<li><a href="#stage-4-1-4">Latency</a></li>
+					<li><a href="#stage-4-1-5">Bandwidth</a></li>
+					<li><a href="#stage-4-1-6">Bits</a></li>
+					<li><a href="#stage-4-1-7">Buckets of Bits</a></li>
+					<li><a href="#stage-4-1-8">Making a Network</a></li>
+					<li><a href="#stage-4-1-9">Protocols</a></li>
+				</ol></div>
+
+			<h3>Stage 4.2</h3>
+			<div>
+			<a href="#stage-4-2"><strong>Make the Internet Work for You</strong></a>
+				<ol>
+					<li><a href="#stage-4-2-1">Document Structure</a></li>
+					<li><a href="#stage-4-2-2">Introducing URLs</a></li>
+					<li><a href="#stage-4-2-3">Query Parameters</a></li>
+					<li><a href="#stage-4-2-4">Fragments</a></li>
+					<li><a href="#stage-4-2-5">Port</a></li>
+					<li><a href="#stage-4-2-6">Get</a></li>
+					<li><a href="#stage-4-2-7">Making Requests</a></li>
+					<li><a href="#stage-4-2-8">User Agent Header</a></li>
+					<li><a href="#stage-4-2-9">HTTP Responses</a></li>
+					<li><a href="#stage-4-2-10">Response Headers</a></li>
+					<li><a href="#stage-4-2-11">Web Applications</a></li>
+				</ol></div>
+
+			<h3>Stage 4.3</h3>
+			<div>
+			<a href="#stage-4-3"><strong>Forms</strong></a>
+				<ol>
+					<li><a href="#stage-4-3-1">Introduction</a></li>
+					<li><a href="#stage-4-3-2">Forms</a></li>
+					<li><a href="#stage-4-3-3">Naming Input</a></li>
+					<li><a href="#stage-4-3-4">Submitting Input</a></li>
+					<li><a href="#stage-4-3-5">The Action Attribute</a></li>
+					<li><a href="#stage-4-3-6">URL Encoding</a></li>
+					<li><a href="#stage-4-3-7">Passwords</a></li>
+					<li><a href="#stage-4-3-8">Checkboxes</a></li>
+					<li><a href="#stage-4-3-9">Multiple Checkboxes</a></li>
+					<li><a href="#stage-4-3-10">Radio Buttons</a></li>
+					<li><a href="#stage-4-3-11">Radio Button Values</a></li>
+					<li><a href="#stage-4-3-12">Label Elements</a></li>
+					<li><a href="#stage-4-3-13">Dropdowns</a></li>
+					<li><a href="#stage-4-3-14">Dropdowns and Values</a></li>
+				</ol></div>
+
+			<h3>Stage 4.4</h3>
+			<div>
+			<a href="#stage-4-4"><strong>Python Break-Modulus &amp; Dictionaries</strong></a>
+				<ol>
+					<li><a href="#stage-4-4-1">The Modulus Operator</a></li>
+					<li><a href="#stage-4-4-2">Dictionaries</a></li>
+					<li><a href="#stage-4-4-3">Using Dictionaries</a></li>
+					<li><a href="#stage-4-4-4">A Noble Gas</a></li>
+				</ol></div>
+
+			<h3>Stage 4.5</h3>
+			<div>
+			<a href="#stage-4-5"><strong>Working with App Engine</strong></a>
+				<ol>
+					<li><a href="#stage-4-5-1">Hello Webapp World</a></li>
+					<li><a href="#stage-4-5-2">Content Type</a></li>
+					<li><a href="#stage-4-5-3">More Handlers</a></li>
+					<li><a href="#stage-4-5-4">The Method Attribute</a></li>
+					<li><a href="#stage-4-5-5">Differences Between Get and Post</a></li>
+					<li><a href="#stage-4-5-6">Problems with Get</a></li>
+				</ol></div>
+
+			<h3>Stage 4.6</h3>
+			<div>
+			<a href="#stage-4-6"><strong>Validation</strong></a>
+				<ol>
+					<li><a href="#stage-4-6-1">Validation</a></li>
+					<li><a href="#stage-4-6-2">What Is Your Birthday</a></li>
+					<li><a href="#stage-4-6-3">Handling Bad Data</a></li>
+					<li><a href="#stage-4-6-4">Valid Month</a></li>
+					<li><a href="#stage-4-6-5">Valid Day</a></li>
+					<li><a href="#stage-4-6-6">Valid Year</a></li>
+					<li><a href="#stage-4-6-7">Checking Validation</a></li>
+					<li><a href="#stage-4-6-8">Responding Based On Verification</a></li>
+					<li><a href="#stage-4-6-9">String Substitution</a></li>
+					<li><a href="#stage-4-6-10">Substituting Multiple Strings</a></li>
+					<li><a href="#stage-4-6-11">Advanced String Substitution</a></li>
+					<li><a href="#stage-4-6-12">Substituting Into Our Form</a></li>
+					<li><a href="#stage-4-6-13">Preserving User Input</a></li>
+					<li><a href="#stage-4-6-14">Problems With HTML Input</a></li>
+					<li><a href="#stage-4-6-15">Handling HTML Input</a></li>
+					<li><a href="#stage-4-6-16">HTML Escaping</a></li>
+					<li><a href="#stage-4-6-17">Using HTML Escaping</a></li>
+					<li><a href="#stage-4-6-18">Implementing HTML Escaping</a></li>
+					<li><a href="#stage-4-6-19">Problems Reinventing the Wheel</a></li>
+					<li><a href="#stage-4-6-20">Current Limitations</a></li>
+					<li><a href="#stage-4-6-21">Redirection</a></li>
+					<li><a href="#stage-4-6-22">Redirection Advantages</a></li>
+					<li><a href="#stage-4-6-23">Implementing Redirection</a></li>
+				</ol></div>
+
+			<h3>Stage 4.7</h3>
+			<div>
+			<a href="#stage-4-7"><strong>HTML Templates</strong></a>
+				<ol>
+					<li><a href="#stage-4-7-1">Writing a Basic Form</a></li>
+					<li><a href="#stage-4-7-2">Hidden Inputs</a></li>
+					<li><a href="#stage-4-7-3">Shopping List Take 1</a></li>
+					<li><a href="#stage-4-7-4">Possible Problems</a></li>
+					<li><a href="#stage-4-7-5">Introducing Templates</a></li>
+					<li><a href="#stage-4-7-6">Template Refactor</a></li>
+					<li><a href="#stage-4-7-7">Variable Substitution</a></li>
+					<li><a href="#stage-4-7-8">Statement Syntax</a></li>
+					<li><a href="#stage-4-7-9">Templates and Types</a></li>
+					<li><a href="#stage-4-7-10">For Loop Syntax</a></li>
+					<li><a href="#stage-4-7-11">FizzBuzz</a></li>
+					<li><a href="#stage-4-7-12">Shopping List Take 2</a></li>
+					<li><a href="#stage-4-7-13">Escaping Templates</a></li>
+					<li><a href="#stage-4-7-14">Helpful Tips</a></li>
+					<li><a href="#stage-4-7-15">Template Inheritance</a></li>
+					<li><a href="#stage-4-7-16">Conclusion</a></li>
+				</ol></div>
+
+			<h3>Stage 4.8</h3>
+			<div>
+			<a href="#stage-4-8"><strong>Databases</strong></a>
+				<ol>
+					<li><a href="#stage-4-8-1">Databases</a></li>
+					<li><a href="#stage-4-8-2">Databases Continued</a></li>
+					<li><a href="#stage-4-8-3">Tables</a></li>
+					<li><a href="#stage-4-8-4">Why Databases</a></li>
+					<li><a href="#stage-4-8-5">Types of Databases</a></li>
+					<li><a href="#stage-4-8-6">SQL</a></li>
+					<li><a href="#stage-4-8-7">More Advanced SQL</a></li>
+					<li><a href="#stage-4-8-8">Order By</a></li>
+					<li><a href="#stage-4-8-9">Joins</a></li>
+					<li><a href="#stage-4-8-10">Indexes</a></li>
+					<li><a href="#stage-4-8-11">Real-World Example</a></li>
+					<li><a href="#stage-4-8-12">Indexes for Sorting</a></li>
+					<li><a href="#stage-4-8-13">Another Real-World Example</a></li>
+					<li><a href="#stage-4-8-14">ACID</a></li>
+					<li><a href="#stage-4-8-15">Google App Engine Datastore</a></li>
+				</ol></div>
+		</div>
 	</div><!--sidebar div-->
 
 	<div class="stage">
