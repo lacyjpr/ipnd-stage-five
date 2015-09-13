@@ -33,6 +33,11 @@ h2 {
 	margin: 5px;
 }
 
+h3 {
+	padding:0px;
+	margin:0px;
+}
+
 ol {
 	margin: 0px;
 }
@@ -61,16 +66,9 @@ textarea#styled1 {
 	height: 40px;
 }
 
-.lesson {
-	background-color: dimgray;
-	color: white;
-	/*padding: 10px;*/
-	padding-top: 1px;
-	padding-bottom: 1px;
-	margin: 10px;
-	border-radius: 10px;
-	margin-left: 240px; /*maintain consistent spacing between sidebar & top heading*/
-	/*margin-left: 24%;*/
+#accordion .ui-accordion-content {
+    max-height: 1000px;
+    overflow-y: auto;
 }
 
 .concept {
@@ -97,6 +95,18 @@ textarea#styled1 {
 .error {
 	color: red;
 	font-weight: bold;
+}
+
+.lesson {
+	background-color: dimgray;
+	color: white;
+	/*padding: 10px;*/
+	padding-top: 1px;
+	padding-bottom: 1px;
+	margin: 10px;
+	border-radius: 10px;
+	margin-left: 240px; /*maintain consistent spacing between sidebar & top heading*/
+	/*margin-left: 24%;*/
 }
 
 .sidebar {
