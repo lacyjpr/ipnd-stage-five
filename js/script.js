@@ -1,11 +1,3 @@
-//borrowed from http://designgala.com/how-to-expand-collapse-toggle-div-layer-using-jquery/
-// jQuery(document).ready(function() {
-//   jQuery(".wrapper").hide();
-//   jQuery(".lesson-header").click(function()
-//   {
-//     jQuery(this).next(".wrapper").slideToggle(10);
-//   });
-// });
 
 //Borrowed from http://www.mikedoesweb.com/2011/100-height-div-with-2-lines-of-code/
 //Code inside $(document).ready only runs when the DOM is ready for JS to execute
@@ -15,8 +7,9 @@ $(document).ready(function(){
 	$(".sidebar").height( $(".stage").height() );
 });
 
+//Accordion widget for the sidebar
 $(document).ready(function() {
 	$( "#accordion" ).accordion();
-	heightStyle: "auto"
+	heightStyle: "content"
 });
 
