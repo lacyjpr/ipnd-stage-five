@@ -10,6 +10,6 @@ $(document).ready(function(){
 //Accordion widget for the sidebar
 $(document).ready(function() {
 	$( "#accordion" ).accordion();
-	heightStyle: "content"
+	heightStyle: "fill"
 });
 
