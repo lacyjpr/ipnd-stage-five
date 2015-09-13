@@ -73,15 +73,6 @@ textarea#styled1 {
 	/*margin-left: 24%;*/
 }
 
-.lesson-header {
-	text-align: center;
-	display: block;
-	font-size: 1.5em;
-	padding: 5px;
-	margin: 5px;
-	font-weight: bold;
-}
-
 .concept {
 	background-color: cyan;
 	color: black;
