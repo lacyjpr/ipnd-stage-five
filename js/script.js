@@ -15,7 +15,8 @@ $(document).ready(function(){
 	$(".sidebar").height( $(".stage").height() );
 });
 
-$(function() {
+$(document).ready(function() {
 	$( "#accordion" ).accordion();
+	heightStyle: "auto"
 });
 
