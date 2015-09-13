@@ -8,13 +8,6 @@ $(document).ready(function(){
 });
 
 //Accordion widget for the sidebar
-// $(function() {
-// 	$( "#accordion" ).accordion();
-// 		heightStyle: "content",
-// 		collapsible: true,
-// 		active: false
-// 	});
-// });
 	$(function() {
 		$( "#accordion" ).accordion({
 		heightStyle: "content"
