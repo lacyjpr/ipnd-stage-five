@@ -1,6 +1,6 @@
-# stage-four
-This is my Stage Four project for Udacity's Introduction to Programming Nanodegree.
+# ipnd-stage-five
+This is my Stage Five project for Udacity's Introduction to Programming Nanodegree.
 
-It contains my notes so far and allows comments on the main page.
+It contains my notes so far, allows comments on the main page, and uses a little JavaScript.
 
-Its hosted at http://stage-four.appspot.com
+
