@@ -67,7 +67,7 @@ textarea#styled1 {
 }
 
 #accordion .ui-accordion-content {
-	/*max-height: 1000px;*/
+	max-height: 300px;
 	overflow-y: auto;
 }
 
