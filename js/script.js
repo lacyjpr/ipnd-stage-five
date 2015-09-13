@@ -12,5 +12,10 @@
 //In this case, when the content of both divs has fully loaded
 $(document).ready(function(){
 //set sidebar height to 100% of stage height
-    $(".sidebar").height( $(".stage").height() );
+	$(".sidebar").height( $(".stage").height() );
 });
+
+$(function() {
+	$( "#accordion" ).accordion();
+});
+
