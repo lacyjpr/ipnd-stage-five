@@ -9,9 +9,8 @@ I took the codecademy JavaScript course at https://www.codecademy.com/en/tracks/
 
 Because my knowledge was lacking, I decided to take the Udacity JavaScript Basics course https://www.udacity.com/course/javascript-basics--ud804  because I knew it dealt in more depth with the interaction between html and javascript, primarily through the use of jQuery. Since I had already completed the first lesson, I had a headstart. The course covers the browser JavaScript console, using append and prepend, basic math, variables, data types, replace, string manipulation, truthy and falsy, arrays, array manipulation, objects, object literal notation, dot and bracket notation, JSON, linting JSON, element properties, if statements, evaluators, for and while loops, for-in loops, functions, click metrics, return statements, and encapsulating functions. That's a lot to cover in a couple of lessons. The course does it through the vehicle of building a resume using JavaScript. The course is very fast paced and requires lots of attention to follow along. I grew frustrated with the course in Lesson 2, where the course expected me to have my entire work history in JSON format, when Lesson 1 had only asked us to include our last employer. Other than this shortcoming, the course is a good way to introduce yourself to many important JavaScript concepts.
 
-http://learn.jquery.com/about-jquery/
-https://www.udacity.com/course/intro-to-jquery--ud245
-https://jqueryui.com/
+Because most of what I wanted to do with JavaScript involved accessing and manipulating the DOM, I needed to learn about jQuery. I went to the jQuery learning center at http://learn.jquery.com/. The Learning Center aims to explain the basics, provide workarounds for common problems, best practices and how tos. Its an attempt to consolidate all the jQuery knowledge that exists in disparate places on the internet. The site covers "About jQuery", Using jQuery Core, Events, Effects, Ajax, Plugins, Performance, Code Organization, jQuery UI and jQuery Mobile. It does so in a straightforward, explanatory fashion, using example code where warranted. Some of the documentation was over my head, but because of the clear way in which it was written, not much of it. Because you can get to the rest of jQuery.com from the site, including the api documentation at http://api.jquery.com/, learn.jquery.com is a great jumping off point to learn jQuery.
+.
 
 <div>
 	<div>
@@ -29,9 +28,10 @@ jQuery(document).ready(function() {
     jQuery(this).next(".wrapper").slideToggle(10);
   });
 });
-It worked. First I tried collapsing each individual concept, but didn't like the way it looked at all. Then, I tried collapsing each lesson. That worked too, but it looked awful and it made my tables of contents non-functional, because the tables were pointing to hidden elements.
-So, I gave up on the idea of collapsing divs. I had two other things I wanted to try out: Making the table of contents sidebar the same height as my content, and making the sub-content in the table of contents collapse.
-The table of contents sidebar height had been bothering me for a long time. You can see what my sidebars looked like before at stage-four.appspot.com. Navigate to one of the notes pages. The sidebar runs out long before the content does, leaving a long expanse of white space on the right. It looks terrible to me. I had tried to fix it before with pure CSS, and never came up with a suitable solution.
+Despite the weird syntax, it worked. First I tried collapsing each individual concept, but didn't like the way it looked at all. Then, I tried collapsing each lesson. That worked too, but it looked even worse and it made my tables of contents non-functional, because the tables were pointing to hidden elements.
+So, I gave up on the idea of collapsing divs. 
+I had two other things I wanted to try out: Making the table of contents sidebar the same height as my content, and making the sub-content in the table of contents collapse.
+The table of contents sidebar height had been bothering me for a long time. You can see what my sidebars looked like before at stage-four.appspot.com. Navigate to one of the notes pages. The sidebar runs out long before the content does, leaving a long expanse of white space on the right. It looks terrible to me. I had tried to fix it before with pure CSS, and never came up with a suitable solution. I know that you can fix it with flexbox, but this is a JavaScript exercise so bear with me. 
 I googled "jquery sidebar 100 height," and came to this page: <a target="_blank" href="http://www.mikedoesweb.com/2011/100-height-div-with-2-lines-of-code/">100% Height Div with 2 lines of code</a> I found this jQuery code:
 $(document).ready(function(){
 $("#side").height( $("#main").height() );
