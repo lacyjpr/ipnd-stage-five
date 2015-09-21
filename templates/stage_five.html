@@ -10,188 +10,188 @@
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">Introduction to JavaScript</div>
-			<div class="concept-content">This lesson is here for two reasons:
-			1. To introduce JavaScript, the programming language of the web.
-			2. To quickly refresh and review programming concepts like variables and data types.
-			The instructions say that we're free to browse this lesson however we'd like. We can follow along or just watch the videos because the end goal is awareness.
-			I like to follow along with the examples the instructors are using because it increases my comprehension and retention. I had trouble at first because the lesson never explicitly says what we are supposed to be editing and what file we are supposed to be looking at in the browser. I posted to the Udacity forums and found out some important things:
-			To follow along, you first need to clone the repository at <a target="_blank" href="https://github.com/udacity/frontend-nanodegree-resume">https://github.com/udacity/frontend-nanodegree-resume/a>. If you need help doing that, I recommend the Udacity course <a target="_blank" href="https://www.udacity.com/course/how-to-use-git-and-github--ud775">How to Use Git and GitHub</a>. The course says it takes three weeks but I completed it in about 8 hours, so it won't take very long. Plus, Git is incredibly useful at this point in the Nanodegree as you make major experimental changes in your final project.
-			Second, when the instructors have you input code, input it into the resumeBuilder.js file found in your newly cloned repository. The file we should be viewing in the browser for output is the index.html file found in the root directory of the browser.</div>
+			<div class="concept-content"><p>This lesson is here for two reasons:</p>
+			<p>1. To introduce JavaScript, the programming language of the web.</p>
+			<p>2. To quickly refresh and review programming concepts like variables and data types.</p>
+			<p>The instructions say that we're free to browse this lesson however we'd like. We can follow along or just watch the videos because the end goal is awareness.</p>
+			<p>I like to follow along with the examples the instructors are using because it increases my comprehension and retention. I had trouble at first because the lesson never explicitly says what we are supposed to be editing and what file we are supposed to be looking at in the browser. I posted to the Udacity forums and found out some important things:</p>
+			<p>To follow along, you first need to clone the repository at <a target="_blank" href="https://github.com/udacity/frontend-nanodegree-resume">https://github.com/udacity/frontend-nanodegree-resume/a>. If you need help doing that, I recommend the Udacity course <a target="_blank" href="https://www.udacity.com/course/how-to-use-git-and-github--ud775">How to Use Git and GitHub</a>. The course says it takes three weeks but I completed it in about 8 hours, so it won't take very long. Plus, Git is incredibly useful at this point in the Nanodegree as you make major experimental changes in your final project.</p>
+			<p>Second, when the instructors have you input code, input it into the resumeBuilder.js file found in your newly cloned repository. The file we should be viewing in the browser for output is the index.html file found in the root directory of the browser.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">Adding JavaScript to a </div>
-			<div class="concept-content">There are two ways:
-			1. Put the JavaScript directly into your html file.
-			Add the JavaScript inside of &lt;script&gt; tags. <a target="_blank" href="http://www.w3schools.com/js/tryit.asp?filename=tryjs_whereto_head">This example</a> shows how.
-			2. Put the JavaScript in a separate .js file.
-			This is the preferred method because it keeps your JavaScript separate from your html, making things cleaner, more organized and easier to edit, plus you can use the same script for many files. <a target="_blank" href="http://javascript.info/tutorial/adding-script-html#external-scripts">This tutorial</a> shows you how.</div>
+			<div class="concept-content"><p>There are two ways:</p>
+			<p>1. Put the JavaScript directly into your html file.</p>
+			<p>Add the JavaScript inside of &lt;script&gt; tags. <a target="_blank" href="http://www.w3schools.com/js/tryit.asp?filename=tryjs_whereto_head">This example</a> shows how.</p>
+			<p>2. Put the JavaScript in a separate .js file.</p>
+			<p>This is the preferred method because it keeps your JavaScript separate from your html, making things cleaner, more organized and easier to edit, plus you can use the same script for many files. <a target="_blank" href="http://javascript.info/tutorial/adding-script-html#external-scripts">This tutorial</a> shows you how.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">var loveJS = true;</div>
-			<div class="concept-content">JavaScript runs natively in the browser and allows us to run and inspect our code very easily.
-			JavaScript gives us a way of saving data in the form of variables.
-			The syntax looks like this: var {{variableName}} = {{someValue}}.
-			To declare a new variable, you begin with the keyword var, regardless of the datatype you're saving.
-			In this example, var firstName = &quot;james&quot;;, we're creating a variable, firstName, and assigning it the string &quot;james&quot;.
-			Assigning variables is slightly different than in Python, which doesn't require a keyword like var, but otherwise looks the same.
-			Numbers in JS don't need quotes, and you don't need to worry about the differences between floating point numbers and integers, as all numbers are saved as 64 bit floating point.
-			Later on, we'll see that arrays, functions and objects use the same var syntax.
-			Lets see if our variables are actually being saved. Add these lines to resumeBuilder.js:
-			var firstName = &quot;james&quot;;
-			var age = 32;
-			console.log(firstName);
-			Then reload index.html in the browser. Open up the console. (In chrome, its viewable via Developer Tools) james has printed out to the console. If the browser opens up a script with console.log in it, it will print whatever information it recieves to the browser console. Its very useful for debugging.</div>
+			<div class="concept-content"><p>JavaScript runs natively in the browser and allows us to run and inspect our code very easily.</p>
+			<p>JavaScript gives us a way of saving data in the form of variables.</p>
+			<p>The syntax looks like this: var {{variableName}} = {{someValue}}.</p>
+			<p>To declare a new variable, you begin with the keyword var, regardless of the datatype you're saving.</p>
+			<p>In this example, var firstName = &quot;james&quot;;, we're creating a variable, firstName, and assigning it the string &quot;james&quot;.</p>
+			<p>Assigning variables is slightly different than in Python, which doesn't require a keyword like var, but otherwise looks the same.</p>
+			<p>Numbers in JS don't need quotes, and you don't need to worry about the differences between floating point numbers and integers, as all numbers are saved as 64 bit floating point.</p>
+			<p>Later on, we'll see that arrays, functions and objects use the same var syntax.</p>
+			<p>Lets see if our variables are actually being saved. Add these lines to resumeBuilder.js:</p>
+<pre><code>var firstName = &quot;james&quot;;
+var age = 32;
+console.log(firstName);</code></pre>
+			<p>Then reload index.html in the browser. Open up the console. (In chrome, its viewable via Developer Tools) james has printed out to the console. If the browser opens up a script with console.log in it, it will print whatever information it recieves to the browser console. Its very useful for debugging.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">string.replace()</div>
-			<div class="concept-content">To build our resumes, we'll be using the string.replace method to find a pattern in a string to replace all or some matches of it.
-			[string].replace([old], [new])
-			Example:
-var email = &quot;cameron@udacity.com&quot;;
+			<div class="concept-content"><p>To build our resumes, we'll be using the string.replace method to find a pattern in a string to replace all or some matches of it.</p>
+			<p>[string].replace([old], [new])</p>
+			<p>Example:</p>
+<pre><code>var email = &quot;cameron@udacity.com&quot;;
 var newEmail = email.replace(&quot;udacity&quot;, &quot;gmail&quot;);
 console.log(email);
-console.log(newEmail);
-			With this example, you can see in the console that Cameron's old udacity email has been replaced with a gmail account.
-			Another example using .append to output to the browser:
-var awesomeThoughts = &quot;I am JP and I am AWESOME!&quot;;
+console.log(newEmail);</code></pre>
+			<p>With this example, you can see in the console that Cameron's old udacity email has been replaced with a gmail account.</p>
+			<p>Another example using .append to output to the browser:</p>
+<pre><code>var awesomeThoughts = &quot;I am JP and I am AWESOME!&quot;;
 var funThoughts = awesomeThoughts.replace(&quot;AWESOME!&quot;, &quot;FUN&quot;);
-$(&quot;#main&quot;).append(funThoughts);</div>
+$(&quot;#main&quot;).append(funThoughts);</code></pre></div>
 		</div>
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">Mixing .replace() and .append()</div>
-			<div class="concept-content">HTML defines the content of a page. Now that we can replace text, we can replace text with real data, and append html strings to start building our resume.
-			Lets look inside helper.js. It contains some helper data that your project will take advantage of. Because helper.js shows up in the html before resumeBuilder.js, it will load first and we'll have access to all the data from helper.js when we start writing resumeBuilder.js. In helper.js, we can see a few string variables, like HTMLmobile, HTMLemail, and HTML twitter. Each of them has a %data% placeholder. In each of those we'll be replacing %data% with our actual data. We'll replace %data% the same way we replaced AWESOME with FUN.
-			Lets try it with the resume:
-var name = &quot;Jean-Paul Lacy&quot;;
+			<div class="concept-content"><p>HTML defines the content of a page. Now that we can replace text, we can replace text with real data, and append html strings to start building our resume.</p>
+			<p>Lets look inside helper.js. It contains some helper data that your project will take advantage of. Because helper.js shows up in the html before resumeBuilder.js, it will load first and we'll have access to all the data from helper.js when we start writing resumeBuilder.js. In helper.js, we can see a few string variables, like HTMLmobile, HTMLemail, and HTML twitter. Each of them has a %data% placeholder. In each of those we'll be replacing %data% with our actual data. We'll replace %data% the same way we replaced AWESOME with FUN.</p>
+			<p>Lets try it with the resume:</p>
+<pre><code>var name = &quot;Jean-Paul Lacy&quot;;
 var formattedName = HTMLheaderName.replace(&quot;%data%&quot;, name);
 var role = &quot;Web Developer&quot;;
 var formattedRole = HTMLheaderRole.replace(&quot;%data%&quot;, role);
 $(&quot;#header&quot;).prepend(formattedRole);
-$(&quot;#header&quot;).prepend(formattedName);
-			We use .prepend in this case because the header div in index.html already has content that we want after our name and role.</div>
+$(&quot;#header&quot;).prepend(formattedName);</code></pre>
+			<p>We use .prepend in this case because the header div in index.html already has content that we want after our name and role.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">String Manipulation</div>
-			<div class="concept-content"> Using string methods, convert &quot;audacity&quot; to &quot;Udacity&quot;. Look at the documentation on JS string methods <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">here</a>.
-var s = &quot;audacity&quot;;
+			<div class="concept-content"><p> Using string methods, convert &quot;audacity&quot; to &quot;Udacity&quot;. Look at the documentation on JS string methods <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">here</a>.</p>
+<pre><code>var s = &quot;audacity&quot;;
 var udacityizer = function(s) {
 	var s = &quot;audacity&quot;;
 	s = s[1].toUpperCase() + s.slice(2);
 	return s;
 };
-console.log(udacityizer(s));</div>
+console.log(udacityizer(s));</code></pre></div>
 		</div>
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">Truthy/Falsy</div>
-			<div class="concept-content">JS has a set of values that may evaluate to true or false but may not equal true or false. Because of this, we call these values truthy and falsy.
-			Truthy:
-			true
-			non-zero numbers
-			&quot;strings with a length of at least one&quot;
-			objects
-			arrays
-			functions
-			(all evaluate to true)
-			Falsy:
-			false
-			0
-			&quot;&quot;(empty strings)
-			undefined(The variable doesn't exist, the interpreter doesn't know what you're referring to.)
-			null(The variable exists, but has no value.)
-			NaN(Not a Number)
-			(all evaluate to false)</div>
+			<div class="concept-content"><p>JS has a set of values that may evaluate to true or false but may not equal true or false. Because of this, we call these values truthy and falsy.</p>
+			<p>Truthy:</p>
+			<p>true</p>
+			<p>non-zero numbers</p>
+			<p>&quot;strings with a length of at least one&quot;</p>
+			<p>objects</p>
+			<p>arrays</p>
+			<p>functions</p>
+			<p>(all evaluate to true)</p>
+			<p>Falsy:</p>
+			<p>false</p>
+			<p>0</p>
+			<p>&quot;&quot;(empty strings)</p>
+			<p>undefined(The variable doesn't exist, the interpreter doesn't know what you're referring to.)</p>
+			<p>null(The variable exists, but has no value.)</p>
+			<p>NaN(Not a Number)</p>
+			<p>(all evaluate to false)</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">Arrays</div>
-			<div class="concept-content">JS arrays are 0 index, just like lists Python. The first element is indexed to 0.
-			Arrays are just lists of values, and the behave just like lists in Python.
-			Syntax: var myArray = [item_1, item_n]
-			Lets make an array of skills, it could be useful in our resumes:
-			var skills = [&quot;awesomeness&quot;, &quot;programming&quot;, &quot;teaching&quot;, &quot;JS&quot;];
-			$(&quot;#main&quot;).append(skills);
-			Save that in resumeBuilder.js and refresh index.html. It displays, but without commas or spaces, because our strings didn't include them.
-			Now add the line $(&quot;#main&quot;).append(skills[0]); to resumeBuilder.js. The word awesomeness gets added to what we have in the browser.
-			If you want to just display awesomeness, comment out the first append line.
-			Is the length of an array equal to the last index? No. Indexing starts at 0 for the first item in an array.</div>
+			<div class="concept-content"><p>JS arrays are 0 index, just like lists Python. The first element is indexed to 0.</p>
+			<p>Arrays are just lists of values, and the behave just like lists in Python.</p>
+			<p>Syntax: var myArray = [item_1, item_n]</p>
+			<p>Lets make an array of skills, it could be useful in our resumes:</p>
+			<p>var skills = [&quot;awesomeness&quot;, &quot;programming&quot;, &quot;teaching&quot;, &quot;JS&quot;];</p>
+			<p>$(&quot;#main&quot;).append(skills);</p>
+			<p>Save that in resumeBuilder.js and refresh index.html. It displays, but without commas or spaces, because our strings didn't include them.</p>
+			<p>Now add the line $(&quot;#main&quot;).append(skills[0]); to resumeBuilder.js. The word awesomeness gets added to what we have in the browser.</p>
+			<p>If you want to just display awesomeness, comment out the first append line.</p>
+			<p>Is the length of an array equal to the last index? No. Indexing starts at 0 for the first item in an array.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">Array Manipulation</div>
-			<div class="concept-content">If you are given an array of numbers, how can you increase the value of the last number by one?
-function incrementLastArrayElement(_array)  {
+			<div class="concept-content"><p>If you are given an array of numbers, how can you increase the value of the last number by one?</p>
+<pre><code>function incrementLastArrayElement(_array)  {
 	var newArray = [];
 	newArray = _array.slice(0);
 	var lastNumber = newArray.pop();
 	newArray.push(lastNumber + 1);
 	return newArray;
-}</div>
+}</code></pre></div>
 		</div>
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">Object Literal Notation</div>
-			<div class="concept-content">Hands are like objects because they can hold information and do things.
-			Objects in JS can be declared and defined in a few different ways.
-			All of them are different from the say Python defines classes and objects because there are no classes in JS. There are ways to mimic classes in some respects, but they are still just objects.
-			Lets start defining objects with Object Literal Notation. It uses the same var syntax we had before:
-			var myObj = {};
-			Lets define an object from the biography:
-			var bio = {};
-			Inside the curly braces, we can define the object's properties using key value pairs
-var bio = {
+			<div class="concept-content"><p>Hands are like objects because they can hold information and do things.</p>
+			<p>Objects in JS can be declared and defined in a few different ways.</p>
+			<p>All of them are different from the say Python defines classes and objects because there are no classes in JS. There are ways to mimic classes in some respects, but they are still just objects.</p>
+			<p>Lets start defining objects with Object Literal Notation. It uses the same var syntax we had before:</p>
+			<p>var myObj = {};</p>
+			<p>Lets define an object from the biography:</p>
+			<p>var bio = {};</p>
+			<p>Inside the curly braces, we can define the object's properties using key value pairs:</p>
+<pre><code>var bio = {
 	&quot;name&quot; : &quot;James&quot;,
 	&quot;age&quot; : 32
 	&quot;skills&quot; : skills
-};
-			We can save whatever we want here, even an array like skills.
-			To access these properties later, we add .property after the object name.
-			To append James' name to the page, all you need to do is access the .name property:
-			$(&quot;#main&quot;).append(bio.name);</div>
+};</code></pre>
+			<p>We can save whatever we want here, even an array like skills.</p>
+			<p>To access these properties later, we add .property after the object name.</p>
+			<p>To append James' name to the page, all you need to do is access the .name property:</p>
+			<p>$(&quot;#main&quot;).append(bio.name);</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">Dot and Bracket Notation</div>
-			<div class="concept-content">We just used dot notation for objects, which we just used to access bio.name.
-			Dot notation allows us to define an object, then define its properties outside the curly braces:
-			Syntax: var myObj = {};
-			myObj.property = someValue;
-			Example:
-var bio = {
+			<div class="concept-content"><p>We just used dot notation for objects, which we just used to access bio.name.</p>
+			<p>Dot notation allows us to define an object, then define its properties outside the curly braces:</p>
+			<p>Syntax: var myObj = {};</p>
+			<p>myObj.property = someValue;</p>
+			<p>Example:</p>
+<pre><code>var bio = {
 	&quot;name&quot; : &quot;James&quot;,
 	&quot;age&quot; : 32
 	&quot;skills&quot; : skills
 };
 bio.city = &quot;Mountain View&quot;;
-bio.email = &quot;james.williams@udacity.com&quot;
-			With dot notation, there is no need to use var. We're adding properties to an object, not creating new variables.
-			There is at least one more syntax pattern to define the properties of an object: Bracket notation.
-			Syntax: myObj[&quot;property&quot;]=someValue
-			Example:
-bio [&quot;city&quot;] = &quot;Mountain View&quot;;
-bio [&quot;email&quot;] = &quot;james.williams@udacity.com&quot;</div>
+bio.email = &quot;james.williams@udacity.com&quot;</code></pre>
+			<p>With dot notation, there is no need to use var. We're adding properties to an object, not creating new variables.</p>
+			<p>There is at least one more syntax pattern to define the properties of an object: Bracket notation.</p>
+			<p>Syntax: myObj[&quot;property&quot;]=someValue</p>
+			<p>Example:</p>
+<pre><code>bio [&quot;city&quot;] = &quot;Mountain View&quot;;
+bio [&quot;email&quot;] = &quot;james.williams@udacity.com&quot;</code></pre></div>
 		</div>
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">A Note about JSON</div>
-			<div class="concept-content">What is JSON?
-			JavaScript Object Notation. Its a simple format for storing and transferring nested hierarchical data. Most other programming languages have libraries to parse and write JSON. GET and POST requests often communicate using JSON. JSON allows for objects and data of other types to be enclosed in other objects.
-			Why should I lint my JSON?
-			JSON uses a mix of nested curly braces, brackets and commas, so its easy to make errors, creating bugs. If you're writing JSON by hand, you should run your code through a JSON linter to find syntax errors.
-			<a target="_blank" href="http://jsonlint.com/">jsonlint.com</a> is a good one.
-			Sublime text will highlight most syntax errors, but a JSON linter won't miss any.</div>
+			<div class="concept-content"><p>What is JSON?</p>
+			<p>JavaScript Object Notation. Its a simple format for storing and transferring nested hierarchical data. Most other programming languages have libraries to parse and write JSON. GET and POST requests often communicate using JSON. JSON allows for objects and data of other types to be enclosed in other objects.</p>
+			<p>Why should I lint my JSON?</p>
+			<p>JSON uses a mix of nested curly braces, brackets and commas, so its easy to make errors, creating bugs. If you're writing JSON by hand, you should run your code through a JSON linter to find syntax errors.</p>
+			<p><a target="_blank" href="http://jsonlint.com/">jsonlint.com</a> is a good one.</p>
+			<p>Sublime text will highlight most syntax errors, but a JSON linter won't miss any.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">JSON</div>
-			<div class="concept-content">JSON relies on object literal notation, useful for storing nested data.
-			Example:
-var education = {
+			<div class="concept-content"><p>JSON relies on object literal notation, useful for storing nested data.</p>
+			<p>Example:</p>
+<pre><code>var education = {
 	&quot;schools&quot;: [
 		{
 		&quot;name&quot;: &quot;Eckerd College&quot;,
@@ -206,13 +206,13 @@ var education = {
 		&quot;major&quot;: [&quot;CompSci&quot;]
 		}
 	]
-}</div>
+}</code></pre></div>
 		</div>
 
 		<div class="concept" id="stage-5-1-1">
 			<div class="concept-title">Validating JSON</div>
-			<div class="concept-content">Open up <a target="_blank" href="http://jsonlint.com/">jsonlint.com</a> which will tell us if the above JSON is in the right format. Go ahead and copy the object, just between the curly braces.
-			Paste it in, click validate, and the results say Valid JSON.</div>
+			<div class="concept-content"><p>Open up <a target="_blank" href="http://jsonlint.com/">jsonlint.com</a> which will tell us if the above JSON is in the right format. Go ahead and copy the object, just between the curly braces.</p>
+			<p>Paste it in, click validate, and the results say Valid JSON.</p></div>
 		</div>
 	</div><!--lesson div-->
 	</div><!--stage div-->
