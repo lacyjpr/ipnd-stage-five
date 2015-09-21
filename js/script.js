@@ -7,11 +7,12 @@ $(document).ready(function(){
 	$(".sidebar").height( $(".stage").height() );
 });
 
-//Accordion widget for the sidebar
+//Accordion widget for the sidebar. From jQueryui.com
 	$(function() {
 		$( "#accordion" ).accordion({
 		heightStyle: "content",
 		collapsible: true,
-		active: false
+		active: false,
+		animate: 100
 		});
 	});
