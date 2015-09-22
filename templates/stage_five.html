@@ -495,14 +495,14 @@ def gmaps_img(points):
 			<p><code>self.render('front.html', title=title, art=art, error=error, arts=arts, img_url=img_url)</code></p>
 			<p>Now we need to update our template. Its called <code>front.html</code> and located in the templates directory of the project.</p>
 			<p>Add these lines after the form:</p>
-<pre><code>&#123% if img_url %}
-	&lt;img src=&quot;&#123{img_url}}&quot;&gt;
-&#123% endif %}</code></pre>
+<pre><code>&#123;% if img_url %}
+	&lt;img src=&quot;&#123;{img_url}}&quot;&gt;
+&#123;% endif %}</code></pre>
 			<p>Now lets try it in the browser. If we have any art with coordinates, a map will appear!</p>
 			<p>To get it to appear on the right, add a class to your image in the template:</p>
-<pre><code>&#123% if img_url %}
-	&lt;img class=&quot;map&quot;src=&quot;&#123{img_url}}&quot;&gt;
-&#123% endif %}</code></pre>
+<pre><code>&#123;% if img_url %}
+	&lt;img class=&quot;map&quot;src=&quot;&#123;{img_url}}&quot;&gt;
+&#123;% endif %}</code></pre>
 			<p>Then add a style section to your template:</p>
 <pre><code>&lt;style type=&quot;text/css&quot;&gt;
 .map {
