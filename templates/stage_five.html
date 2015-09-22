@@ -625,86 +625,86 @@ app = webapp2.WSGIApplication([('/', MainPage)], debug = True)</code></pre></div
 
 		<div class="concept" id="stage-5-3-1">
 			<div class="concept-title">Infinite Power</div>
-			<div class="concept-content">The big idea in this stage is recursive definitions. The real goal is to give you infinite power. But wait, we've had infinite power since stage 2, when we learned that with if, functions and arithmetic we could every possible computer program. We went on to introduce while, and that really should not have been necessary if you already had infinite power. What we're going to see in this unit is all you really need are procedures (functions) and that by thinking about things recursively you can solve lots of problems in interesting ways.</div>
+			<div class="concept-content"><p>The big idea in this stage is recursive definitions. The real goal is to give you infinite power. But wait, we've had infinite power since stage 2, when we learned that with if, functions and arithmetic we could every possible computer program. We went on to introduce while, and that really should not have been necessary if you already had infinite power. What we're going to see in this unit is all you really need are procedures (functions) and that by thinking about things recursively you can solve lots of problems in interesting ways.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-3-2">
 			<div class="concept-title">Long Words</div>
-			<div class="concept-content">What is the longest word in the English language?
-			Is it hornorificabilititudinitatibus, antidisestablismentarianism, hippopotomonstrosequipedaliophobia pneumonoultramicrosopicsilicovolanoconiosis, or none of the above? The answer is none of the above. The reason is that whatever you claim is the longest word, you can always make a longer one. There is no such thing as the longest word in the English language.</div>
+			<div class="concept-content"><p>What is the longest word in the English language?</p>
+			<p>Is it hornorificabilititudinitatibus, antidisestablismentarianism, hippopotomonstrosequipedaliophobia pneumonoultramicrosopicsilicovolanoconiosis, or none of the above? The answer is none of the above. The reason is that whatever you claim is the longest word, you can always make a longer one. There is no such thing as the longest word in the English language.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-3-3">
 			<div class="concept-title">Counter</div>
-			<div class="concept-content">A word is just something that has meaning, that speakers of the language will understand. We could define words as just what's in the dictionary and then there would be a clear answer to the longest word question. But, there are lots of things that are words that aren't in the dictionary. The important thing about words is we have rules for making new words.
-			For example, we have a rule that says if we have a word, we can make a new word by adding counter- in front of the old word:
-			Word --&gt; counter-Word. This is a Backus-Naur Form replacement grammar that we used in stage 2. The basic property is that we can replace what's on the left side with what's on the right side.
-			Any time we have a word, we can replace it with counter-word, the meaning of the new word is &quot;something that goes against the original word.&quot;
-			If we started with the word intellegence, (in the sense of spycraft,) we could use the rule and make the word counter-intelligence. We can use the rule again and make counter-counter-intelligence. We could keep doing that, we could have counter-counter-counter-intelligence, and so on.
-			We could do this for other words, like hippopotomonstrosequipedaliophobia (fear of long words.) We can make the new word counter-hippopotomonstrosequipedaliophobia, and even though you've never seen the word before, you can guess that its something that goes against the fear of long words, like a new drug. You could also guess that counter-counter-hippopotomonstrosequipedaliophobia is something that counteracts the new drug.
-			Because English has this rule that allows us to make new words from old words, there is no such thing as the longest word. We can always make a longer word starting from any word that we have.</div>
+			<div class="concept-content"><p>A word is just something that has meaning, that speakers of the language will understand. We could define words as just what's in the dictionary and then there would be a clear answer to the longest word question. But, there are lots of things that are words that aren't in the dictionary. The important thing about words is we have rules for making new words.</p>
+			<p>For example, we have a rule that says if we have a word, we can make a new word by adding counter- in front of the old word:</p>
+			<p>Word --&gt; counter-Word. This is a Backus-Naur Form replacement grammar that we used in stage 2. The basic property is that we can replace what's on the left side with what's on the right side.</p>
+			<p>Any time we have a word, we can replace it with counter-word, the meaning of the new word is &quot;something that goes against the original word.&quot;</p>
+			<p>If we started with the word intellegence, (in the sense of spycraft,) we could use the rule and make the word counter-intelligence. We can use the rule again and make counter-counter-intelligence. We could keep doing that, we could have counter-counter-counter-intelligence, and so on.</p>
+			<p>We could do this for other words, like hippopotomonstrosequipedaliophobia (fear of long words.) We can make the new word counter-hippopotomonstrosequipedaliophobia, and even though you've never seen the word before, you can guess that its something that goes against the fear of long words, like a new drug. You could also guess that counter-counter-hippopotomonstrosequipedaliophobia is something that counteracts the new drug.</p>
+			<p>Because English has this rule that allows us to make new words from old words, there is no such thing as the longest word. We can always make a longer word starting from any word that we have.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-3-4">
 			<div class="concept-title">Counter Quiz</div>
-			<div class="concept-content">If the only rule we have for making words is this one:
-			Word --&gt; counter-Word
-			How many words can we make, starting from the non-terminal Word?
-			None, 1, 2, or Infinitely many?
-			The answer is none.
-			We can't make any words from this rule, because our definition is circular. If you remember BNF grammars, we can only stop once we have all terminals. This rule gives us no way to stop. We can keep adding more counter-s but, we'll never replace the non-terminal Word.</div>
+			<div class="concept-content"><p>If the only rule we have for making words is this one:</p>
+			<p>Word --&gt; counter-Word</p>
+			<p>How many words can we make, starting from the non-terminal Word?</p>
+			<p>None, 1, 2, or Infinitely many?</p>
+			<p>The answer is none.</p>
+			<p>We can't make any words from this rule, because our definition is circular. If you remember BNF grammars, we can only stop once we have all terminals. This rule gives us no way to stop. We can keep adding more counter-s but, we'll never replace the non-terminal Word.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-3-5">
 			<div class="concept-title">Expanding Our Grammar</div>
-			<div class="concept-content">Lets add one more rule.
-			How many different words can we make starting from Word using only these two rules:
-			Word --&gt; counter-Word
-			Word --&gt; hippopotomonstrosequipedaliophobia
-			How many words can we make?
-			None, 1, 2, or Infinitely many?
-			Now, the answer is infinitely many.
-			This is the power that recursive definitions give us.
-			Unlike the previous definition which was circular, what we have now is called a recursive definition. That means we've defined Word in terms of itself, but we have another rule that allows us to have a starting point. Using these two rules, there is no limit to the number of words we can produce.
-			The important things that our definition has is a base case:  Word --&gt; hippopotomonstrosequipedaliophobia
-			And it has a recursive case: Word --&gt; counter-Word
-			By combining those two, we have a definition that can make infinitely many words.</div>
+			<div class="concept-content"><p>Lets add one more rule.</p>
+			<p>How many different words can we make starting from Word using only these two rules:</p>
+			<p>Word --&gt; counter-Word</p>
+			<p>Word --&gt; hippopotomonstrosequipedaliophobia</p>
+			<p>How many words can we make?</p>
+			<p>None, 1, 2, or Infinitely many?</p>
+			<p>Now, the answer is infinitely many.</p>
+			<p>This is the power that recursive definitions give us.</p>
+			<p>Unlike the previous definition which was circular, what we have now is called a recursive definition. That means we've defined Word in terms of itself, but we have another rule that allows us to have a starting point. Using these two rules, there is no limit to the number of words we can produce.</p>
+			<p>The important things that our definition has is a base case:  Word --&gt; hippopotomonstrosequipedaliophobia</p>
+			<p>And, it has a recursive case: Word --&gt; counter-Word</p>
+			<p>By combining those two, we have a definition that can make infinitely many words.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-3-6">
 			<div class="concept-title">Recursive Definitions</div>
-			<div class="concept-content">This works for things other than words. The place where you've seen it the most so far has been in language. We're also going to see how to use it to make procedures. There are lots and lots of different things in computing that are defined recursively.
-			A recursive definition has two parts:
-			1. The base case. A starting point. The important thing about the base case is that its not defined in terms of itself. Its the smallest input that we already know the answer to.
-			2. The recursive case. It is defined in terms of itself. Actually, defined in terms of a smaller version of itself. We need to make progress to eventually get to the base case.</div>
+			<div class="concept-content"><p>This works for things other than words. The place where you've seen it the most so far has been in language. We're also going to see how to use it to make procedures. There are lots and lots of different things in computing that are defined recursively.</p>
+			<p>A recursive definition has two parts:</p>
+			<p>1. The base case. A starting point. The important thing about the base case is that its not defined in terms of itself. Its the smallest input that we already know the answer to.</p>
+			<p>2. The recursive case. It is defined in terms of itself. Actually, defined in terms of a smaller version of itself. We need to make progress to eventually get to the base case.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-3-7">
 			<div class="concept-title">Ancestors</div>
-			<div class="concept-content">Who are your ancestors?
-			We have you, and your parents. But they aren't all of your ancestors. Your parents have parents as well. Your grandparents also had parents, your great-grandparents, and so on.
-			All of these, except yourself, are your ancestors.
-			Our goal is to define that precisely. Can we come up with a definition that describes preciesly all the ancestors that you have?
-			The best definition of ancestors is:
-			Ancestor --&gt; Parent
-			Ancestor --&gt; Parent of Ancestor
-			This is a recursive definition that works. It says our parent is our ancestor, and the parent of an ancestor is also an ancestor. This will give us exactly the set of ancestors that we talked about.</div>
+			<div class="concept-content"><p>Who are your ancestors?</p>
+			<p>We have you, and your parents. But they aren't all of your ancestors. Your parents have parents as well. Your grandparents also had parents, your great-grandparents, and so on.</p>
+			<p>All of these, except yourself, are your ancestors.</p>
+			<p>Our goal is to define that precisely. Can we come up with a definition that describes preciesly all the ancestors that you have?</p>
+			<p>The best definition of ancestors is:</p>
+			<p>Ancestor --&gt; Parent</p>
+			<p>Ancestor --&gt; Parent of Ancestor</p>
+			<p>This is a recursive definition that works. It says our parent is our ancestor, and the parent of an ancestor is also an ancestor. This will give us exactly the set of ancestors that we talked about.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-3-8">
 			<div class="concept-title">Recursive Procedures</div>
-			<div class="concept-content">Now we're going to see how to use recursive definitions to define a procedure.
-			We're going to start by defining a factorial procedure. According to Wikipedia, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n.
-			factorial (n) = n * (n-1) * (n-2) * ... *1
-			This definition is not very precise mathematically. The problem is the ... . Humans understand the ... correctly, but its not a very precise mathematical definition.
-			If we use a recursive definition, we can define factorial in a much more precise way.
-			We need to do that by giving a base case: For the base case, we want to think about the simplest input, something we already know the answer to. For factorial, the simplest input is the number zero. factorial (0) = 1. Thats going to be our base case.
-			Now we need to define the recursive case: factorial (n) = n * factorial (n-1)</div>
+			<div class="concept-content"><p>Now we're going to see how to use recursive definitions to define a procedure.</p>
+			<p>We're going to start by defining a factorial procedure. According to Wikipedia, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n.</p>
+			<p>factorial (n) = n * (n-1) * (n-2) * ... *1</p>
+			<p>This definition is not very precise mathematically. The problem is the ... . Humans understand the ... correctly, but its not a very precise mathematical definition.</p>
+			<p>If we use a recursive definition, we can define factorial in a much more precise way.</p>
+			<p>We need to do that by giving a base case: For the base case, we want to think about the simplest input, something we already know the answer to. For factorial, the simplest input is the number zero. factorial (0) = 1. Thats going to be our base case.</p>
+			<p>Now we need to define the recursive case: factorial (n) = n * factorial (n-1)</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-3-9">
 			<div class="concept-title">Recursive Factorial</div>
-			<div class="concept-content">Define a procedure, factorial, that takes a natural number as its input, and outputs then number of ways to arrange the input number of items.
+			<div class="concept-content"><p>Define a procedure, factorial, that takes a natural number as its input, and outputs then number of ways to arrange the input number of items.</p>
 def factorial(n):
 	if (n) == 0:
 		return 1
@@ -716,16 +716,16 @@ def factorial(n):
 			When n is not equal to 0, we use else: Then we have the recursive case:
 	else:
 		return n * factorial(n-1)
-			It may seem strange that we're defining factorial using factorial, it seems circular. The reason its not circular is we have our base case. We have a case where we do stop. Every time we call factorial, instead of passing in the same value of n that we started with, we're passing in n-1, eventually we're going to get to 0. We eventually stop, return 1, and on the way there, we're going to be multiplying in all these values.
-			Lets step through what happens when we run this code. Suppose we called factorial(3). We're going to enter the procedure, the value of n is going to be 3. N is not equal to 0, so we return the value of n * factorial(n-1), so we're computing 3 * factorial(2). Now we're evaluating factorial(2). We enter the procedure again, this time the value of n is 2. We do the comparison, n does not equal 0, so we go to the else clause and return 2 * factorial(1). We call factorial again with factorial(1). We reenter factorial, but this time the value of n is 1. The if test is false, so now we're going to return the result of 1 * factorial(0). Now we call factorial(0), now the value of n is 0. The test is true, so we return 1. That gives us the solution to all our return statements, which is 6.</div>
+			<p>It may seem strange that we're defining factorial using factorial, it seems circular. The reason its not circular is we have our base case. We have a case where we do stop. Every time we call factorial, instead of passing in the same value of n that we started with, we're passing in n-1, eventually we're going to get to 0. We eventually stop, return 1, and on the way there, we're going to be multiplying in all these values.</p>
+			<p>Lets step through what happens when we run this code. Suppose we called factorial(3). We're going to enter the procedure, the value of n is going to be 3. N is not equal to 0, so we return the value of n * factorial(n-1), so we're computing 3 * factorial(2). Now we're evaluating factorial(2). We enter the procedure again, this time the value of n is 2. We do the comparison, n does not equal 0, so we go to the else clause and return 2 * factorial(1). We call factorial again with factorial(1). We reenter factorial, but this time the value of n is 1. The if test is false, so now we're going to return the result of 1 * factorial(0). Now we call factorial(0), now the value of n is 0. The test is true, so we return 1. That gives us the solution to all our return statements, which is 6.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-3-10">
 			<div class="concept-title">Palindromes</div>
-			<div class="concept-content">We're going to do another example of defining a recursive procedure. The goal this time is to take in a string and determine whether or not its a palindrome. A palindrome reads the same way forwards and backwards. An example of a palindrome would be the word level. If we read it forwards, we get level, if we read it backwards, we get exactly the same thing. Another example would be the word a. If we read it forwards or backwards, we get the same result. The empty string, &quot;&quot; is also a palindrome.
-			Our goal is to define a procedure, that will take any string as input, and output True if that string is a palindrome.
-			Define a procedure, is_palindrome, that takes as input a string, and outputs a boolean indicating if the input string is a palindrome.
-			Some hints: Define what it means to be a palindrome. We should think about the base case: &quot;&quot; --&gt;True. What if the input is not an empty string? One way to solve that would be to look at the first letter and last letter of the string. If those are equal, it might be a palindrome, its a palindrome if all the letters left over in the middle are also a palindrome. So, here is how we can break the question of whether a string is a palindrome into smaller steps: Our recursive case is going to test the first and last character of the string, and see if those are equal, if the first and last characters don't match, we know the result is false. If they do match, we need to check to see if the middle of the string is a palindrome.
+			<div class="concept-content"><p>We're going to do another example of defining a recursive procedure. The goal this time is to take in a string and determine whether or not its a palindrome. A palindrome reads the same way forwards and backwards. An example of a palindrome would be the word level. If we read it forwards, we get level, if we read it backwards, we get exactly the same thing. Another example would be the word a. If we read it forwards or backwards, we get the same result. The empty string, &quot;&quot; is also a palindrome.</p>
+			<p>Our goal is to define a procedure, that will take any string as input, and output True if that string is a palindrome.</p>
+			<p>Define a procedure, is_palindrome, that takes as input a string, and outputs a boolean indicating if the input string is a palindrome.</p>
+			<p>Some hints: Define what it means to be a palindrome. We should think about the base case: &quot;&quot; --&gt;True. What if the input is not an empty string? One way to solve that would be to look at the first letter and last letter of the string. If those are equal, it might be a palindrome, its a palindrome if all the letters left over in the middle are also a palindrome. So, here is how we can break the question of whether a string is a palindrome into smaller steps: Our recursive case is going to test the first and last character of the string, and see if those are equal, if the first and last characters don't match, we know the result is false. If they do match, we need to check to see if the middle of the string is a palindrome.</p>
 def is_palindrome(s):
 	if s == '':
 		return True
@@ -738,30 +738,30 @@ def is_palindrome(s):
 
 		<div class="concept" id="stage-5-3-11">
 			<div class="concept-title">MapReduce</div>
-			<div class="concept-content">According to Wikipedia, MapReduce is a programming model and an associated implementation for processing and generating large data sets with a parallel, distributed algorithm on a cluster.
-			Say you have a large file. Processing it serially could take a long time. Instead, MapReduce is designed to process data in parallel. So, your file is broken into chunks, and then processed in parallel. Lets look at a real world scenario.</div>
+			<div class="concept-content"><p>According to Wikipedia, MapReduce is a programming model and an associated implementation for processing and generating large data sets with a parallel, distributed algorithm on a cluster.</p>
+			<p>Say you have a large file. Processing it serially could take a long time. Instead, MapReduce is designed to process data in parallel. So, your file is broken into chunks, and then processed in parallel. Lets look at a real world scenario.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-3-12">
 			<div class="concept-title">Real World Example</div>
-			<div class="concept-content">Lets imagine we run a retailer, with thousands of stores around the world, and we have a big ledger that contains all of our sales. The Big Book O' Sales for the year 2012. We've been asked to calculate things like the total sales per store.
-			Lets say the lines of the ledger look like this: The date of the purchase, the location of the store, what they bought, and the amount.
-			One way we could do this is start at the beginning of the ledger, and for every entry, write down the store location and the amount. When we come to a store location again, update the amount by addition. Then we'd continue through the ledger.</div>
+			<div class="concept-content"><p>Lets imagine we run a retailer, with thousands of stores around the world, and we have a big ledger that contains all of our sales. The Big Book O' Sales for the year 2012. We've been asked to calculate things like the total sales per store.</p>
+			<p>Lets say the lines of the ledger look like this: The date of the purchase, the location of the store, what they bought, and the amount.</p>
+			<p>One way we could do this is start at the beginning of the ledger, and for every entry, write down the store location and the amount. When we come to a store location again, update the amount by addition. Then we'd continue through the ledger.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-3-13">
 			<div class="concept-title">Distributed Work</div>
-			<div class="concept-content">Rather than one person reading the entire ledger, say we had more people to help. We'll split them into two groups: The Mappers, and The Reducers.
-			Then we'll take the ledger, break it into chunks and give each chunk to one of the mappers. That way each of the mappers can work at the same time, each over a small fraction of the data. The mappers would take each sale, and write the location of the store and the amount on an index card. As they write the index cards, they'll pile them up so cards from the same store are in the same pile. By the end, each mapper will have a pile of cards per store.
-			Once the mappers have finished, the reducers can collect their sets of cards. We'll tell each reducer which store they're responsible for. The reducers go to the mappers and collect their respective piles of cards. Its fast because the mappers have already separated their cards. They amalgamate these piles. All they have to do at this point is add up all the amounts from all the cards in the pile. That gives them the total sales for that store. They can then write that amount on their final sheet. To keep things organized, each reducer goes through their piles in alphabetical order, in other words Los Angeles before Miami.</div>
+			<div class="concept-content"><p>Rather than one person reading the entire ledger, say we had more people to help. We'll split them into two groups: The Mappers, and The Reducers.</p>
+			<p>Then we'll take the ledger, break it into chunks and give each chunk to one of the mappers. That way each of the mappers can work at the same time, each over a small fraction of the data. The mappers would take each sale, and write the location of the store and the amount on an index card. As they write the index cards, they'll pile them up so cards from the same store are in the same pile. By the end, each mapper will have a pile of cards per store.</p>
+			<p>Once the mappers have finished, the reducers can collect their sets of cards. We'll tell each reducer which store they're responsible for. The reducers go to the mappers and collect their respective piles of cards. Its fast because the mappers have already separated their cards. They amalgamate these piles. All they have to do at this point is add up all the amounts from all the cards in the pile. That gives them the total sales for that store. They can then write that amount on their final sheet. To keep things organized, each reducer goes through their piles in alphabetical order, in other words Los Angeles before Miami.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-3-14">
 			<div class="concept-title">Summary of MapReduce</div>
-			<div class="concept-content">Thats how MapReduce works.
-			The mappers are just little programs that each deal with a relatively small amount of data and work in parallel. We call their output intermediate records. Thats what we were writing on our index cards. It deals with all data in terms of (key, value), so these records are actually keys and values. In our example, the key was the store name and the value was the sale total for each particular piece of input.
-			Once the mappers have finished, a phase of MapReduce called shuffle and sort takes place. The shuffle is the movement of the intermediate records from the mappers to the reducers. The sort is the fact that the reducers will organize the sets of records, in our case the piles of cards, into sorted order.
-			Finally, each reducer works on one set of records at a time, or one pile of cards. It gets the key and then a list of all the values. In our case a store like New York City, and all the sales for that store. The reducer processes those values in some way, in our case we were adding up sales. Then it writes out the final results.</div>
+			<div class="concept-content"><p>Thats how MapReduce works.</p>
+			<p>The mappers are just little programs that each deal with a relatively small amount of data and work in parallel. We call their output intermediate records. Thats what we were writing on our index cards. It deals with all data in terms of (key, value), so these records are actually keys and values. In our example, the key was the store name and the value was the sale total for each particular piece of input.</p>
+			<p>Once the mappers have finished, a phase of MapReduce called shuffle and sort takes place. The shuffle is the movement of the intermediate records from the mappers to the reducers. The sort is the fact that the reducers will organize the sets of records, in our case the piles of cards, into sorted order.</p>
+			<p>Finally, each reducer works on one set of records at a time, or one pile of cards. It gets the key and then a list of all the values. In our case a store like New York City, and all the sales for that store. The reducer processes those values in some way, in our case we were adding up sales. Then it writes out the final results.</p></div>
 		</div>
 
 
