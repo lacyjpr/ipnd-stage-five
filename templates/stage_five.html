@@ -244,11 +244,360 @@ bio [&quot;email&quot;] = &quot;james.williams@udacity.com&quot;</code></pre></d
 			<p>Paste it in, click validate, and the results say Valid JSON.</p></div>
 		</div>
 	</div><!--lesson div-->
+
+	<div class="lesson" id="stage-5-2">
+		<h2>Stage 5.2 The Power of APIs</h2>
+
+		<div class="concept" id="stage-5-2-1">
+			<div class="concept-title">Introduction</div>
+			<div class="concept-content">We're going to talk about how to make your website communicate with other computers, by using what we call an API (Application Programming Interface.) Instead of generating HTML that we send to browsers, we're going to get data in formats like XML or JSON which are designed to be read by computers. In this lesson, we're going to add a feature to ascii chan that will allow you to see where users are submitting images from using the Google Maps API.</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-2">
+			<div class="concept-title">HTTP Clients</div>
+			<div class="concept-content">Until now, we've been working with the standard picture of the user, their browser, and servers. In a normal web request, the user makes a request to the server, and we respond with the response. What we're going to be talking about is when your servers make requests to other servers. We can have a web page that actually makes requests to Twitter. These are our servers talking to theirs. They're still communicating over HTTP, and Twitter still responds as usual. If we're writing a web program that does some data analysis on Twitter, a user might make a request to us, we might make a request to Twitter, they respond, we may manipulate that data and return it to the user. This is actually a really common case.
+			Hipmunk does a lot of this. When a user does a flight search, what Hipmunk does is hit a bunch of data providers where they actually get their flight data from. Hipmunk will take your flight search, send it to ITA, send it to an airline, and in some cases, even send it to Amtrak, ITA will run their flight search and send Hipmunk data back, the airline will do the same, and Amtrak will do the same as well. On Hipmunk's server, they have all this flight search data. They will manipulate all the data, collate it, make nice results, and send back an HTML response to the user.
+			What we're going to be working on is how do we make our server speak to other servers, when there's no browser involved. We're still using HTTP, but we are now communicating over other protocols. There are a lot of cool things you can do when you realize you aren't the only service on the internet.</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-3">
+			<div class="concept-title">Urllib</div>
+			<div class="concept-content">In Python we have a library called urllib2. (And a library called urllib.) Open a Python terminal and import both of those.
+			urllib2 has a function called urlopen. Type this line into the terminal: p = urllib2.urlopen(&quot;http://www.google.com&quot;)
+			Now if we type p in the terminal, we get something like: &lt;addinfourl at 42571208L whose fp = &lt;socket._fileobject object at 0x0000000002466B10&gt;&gt;
+			This is basically a file object. In Python, a file object is an object with a read method. You can call read on it to get the contents.
+			Type this line into the terminal: c = p.read()
+			Now, type in c. We get a wall of text. This is actually Google's front page. Now we can manipulate the response in our programs.
+			Now, lets look at the p object. Type in dir(p). Now we can see the methods and attributes on our p object.
+			Lets look at a couple of them: Type in p.url. We get 'http://www.google.com'.
+			Type in p.headers. We get something like &lt;httplib.HTTPMessage instance at 0x0000000002899288&gt;. This is an HTTP message instance. This happens to be a dictionary. So if we type in p.headers.items(), we can see all the headers we got back from Google.</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-4">
+			<div class="concept-title">XML</div>
+			<div class="concept-content">How computers communicate:
+			We could have our servers (say Hipmunk,) make a request to Amtrak and receive HTML back from them. But, this is sub-optimal. HTML is somewhat complex, its not very regular, browsers are forgiving of errors, and parsing HTML by machine is very difficult, so HTML is not an ideal language for computer to computer communication.
+			One such language is XML. XML was invented in the late 90s expressly for this purpose, to have a regular way of expressing data between computer systems. XML is very similar to HTML. The main difference between XML and HTML is that every tag must have a closing tag. The tag format is the same, we still have less than and greater than surrounding tags, and slashes to indicate closing tags. There are no void tags in XML.</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-5">
+			<div class="concept-title">Parsing XML</div>
+			<div class="concept-content">Python has a library called minidom. You can get it by saying from xml.dom import minidom. dom stands for Document Object Model. This refers to the internal representation of an XML document. We'll be using minidom. Why is it called that? The mini implies that its a smaller, lighter weight version of this dom parser. When you're only parsing a little text, you can use the library minidom, which is simple and fast, but will break if you throw lots of gigabytes of text at it.
+			minidom has a function called parseString: minidom.parseString
+			Try entering this: x = minidom.parseString(&quot;&lt;mytag&gt;contents!&lt;children&gt;&lt;item&gt;1&lt;/item&gt;&lt;item&gt;2&lt;/item&gt;&lt;/children&gt;&lt;/mytag&gt;&quot;)
+			Then do dir(x). We get a ton of stuff back.
+			Try print x.toprettyxml(). We get a nicely formatted version of our string.
+			Try x.getElementsByTagName(&quot;mytag&quot;). We get one item.
+			Try x.getElementsByTagName(&quot;item&quot;). We get two items.
+			We can look at the first item element by doing x.getElementsByTagName(&quot;item&quot;)[0]
+			If we look at its children, x.getElementsByTagName(&quot;item&quot;)[0].childNodes, we get [&lt;DOM Text node &quot;u'1'&quot;&gt;], which means we have one text node.
+			x.getElementsByTagName(&quot;item&quot;)[0].childNodes[0].nodeValue accesses the node value attribute, which tells us the value is 1.</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-6">
+			<div class="concept-title">JSON</div>
+			<div class="concept-content">JSON serves the same purpose as XML, which is that its a nice computer and human readable way to exchange data. It stands for JavaScript Object Notation. JSON is actually valid JavaScript code. It basically looks like a dictionary:
+{&quot;itineraries&quot;: [{&quot;from&quot;: &quot;SFO&quot;,
+				  &quot;to&quot;: &quot;IAD&quot;},
+				  {&quot;from&quot;: &quot;IAD&quot;,
+				   &quot;to&quot;: &quot;SEA&quot;}]
+}
+			We have a dictionary, its got a key called itineraries, whose value may be a list of other dictionaries. In this case, we have a dictionary for each leg.
+			JSON is really handy for expressing these types of objects. Anything you can express in XML, you can also express in JSON. JSON is a little less verbose because you don't need opening and closing tags. You can build things out of dictionaries, you can also have lists, which use brackets just like Python does, a list can also be the value of a dictionary, or an item in a list.
+			How to parse JSON in Python:
+			In your Python terminal import json.
+			Enter this: j = '{&quot;one&quot;: 1, &quot;numbers&quot;: [1,2,3.5]}'
+			Now, lets parse the string: json.loads(j)
+			When we run that, we get back a Python dictionary with our same keys and our same values: {u'numbers': [1, 2, 3.5], u'one': 1}
+			If we store that in a variable like this: d = json.loads(j)
+			We can manipulate it like this: d['numbers'] gives us our list, and d['one'] gives us our number 1.</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-7">
+			<div class="concept-title">APIs</div>
+			<div class="concept-content">On Reddit, we can get any page in JSON or XML by changing the extension to .json or .xml respectively. Many web pages have this feature, where you can get their content in different formats.
+			Another good example is Twitter. If you go to Twitter and do a search for udacity, you'll get all the different tweets about udacity. Instead, if you go to search.twitter.com/seach.json?=udacity, you'll get a json listing of the search results we were just looking at.
+			If you're writing web software and want to include data from other websites, it usually just takes some poking around to find their APIs.</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-8">
+			<div class="concept-title">Being a Good Citizen</div>
+			<div class="concept-content">How to be a good citizen on the internet:
+			There are two key things you can do when writing software that accesses other people's websites.
+			1. Use a good user-agent. User-agents are the header that describes the browser or software you're using to access somebody. If you're planning to access somebody in a consistent fashion, use a good user agent. When you're using urllib2, you can specify headers in your request, and you should set a user agent header that says who you are, what your name is, maybe links to your website, so if someone on the other end sees you pounding them, they have a way of reaching you to ask you to tone it down.
+			2. Rate limit yourself. Instead of hammering sites for more and more results, its a good idea to get in the habit of using the sleep function so you aren't stressing someone's server.</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-9">
+			<div class="concept-title">SOAP</div>
+			<div class="concept-content">SOAP is a complicated protocol based on XML. So complicated we won't be covering it.
+			There are many other protocols and formats for communicating across the internet:
+			SOAP - Invented by Microsoft to make communicating across the internet as complex as possible.
+			Protocol Buffers (Google)
+			Thrift (Facebook)
+			plain-text, custom formats(Not recommended, requires custom code to parse.)
+			XML
+			JSON</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-10">
+			<div class="concept-title">ASCII Chan 2</div>
+			<div class="concept-content">First, you need to download and unzip the file ascii-chan-ipnd-incomplete from https://www.udacity.com/course/viewer#!/c-nd000/l-4191238688/m-4080748764, then you can follow along with the rest of the lesson.
+			ASCII Chan is a website that allows users to submit a title along with ascii art in a message board format. Once I had it downloaded and unzipped, I loaded it in GAE so I could see it working on my machine.
+			What we'd like to do is add a map that shows where the most recent submissions came from.
+			We need to do several things to get this map working:
+			We need a way to turn the request IP into coordinates.
+			(For this we'll be using hostip.info, which has a handy API.)
+			We need a way to draw a map.
+			(For this we'll be using Google Maps, which has a service called static maps, which lets us draw a map with markers on it.)</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-11">
+			<div class="concept-title">Geolocation</div>
+			<div class="concept-content">Lets start with the first piece: Implementing a function that looks up the user's ip.
+			Look at the code for ASCII Chan in the folder you unzipped. Its in main.py. Its not a lot of code, and most of it is taken up by the main page handler. The get function function just calls render_front. All render_front does is run a basic query to get the 10 most recent pieces of art. The post function grabs the title and art, and if we have both of them, creates a new art object and puts it in the database, then reloads the page by doing a redirect, otherwise it sends an error message to the user.
+			What we're going to do, right after we create our art object is put in some comments:
+			# lookup the user coordinates form their IP.
+			# if we have coordinates, add them to the Art.
+			We're going to need a function, we'll put it at the top just before class Art.
+def get_coords(ip):
+	pass
+			This function will take an ip, and make a request to hostip.info, which will look like this:
+IP_URL = &quot;http://api.hostip.info/?ip=&quot;
+def get_coords(ip):
+	url = IP_URL + ip
+			We are going to be requesting the URL using urllib2, so go ahead and import that at the top of the program.
+			We are going to be parsing the XML response using minidom, so go ahead and import that: from xml.dom import minidom.
+			Go back to your get_coords function. Add some lines to store the url in a variable:
+IP_URL = &quot;http://api.hostip.info/?ip=&quot;
+def get_coords(ip):
+	url = IP_URL + ip
+	content = None
+	content = urllib2.urlopen(url)
+			Then we're going to call read on that response:
+			content = urllib2.urlopen(url).read()
+			If the URL is bad, or hostip.info is down, our code will raise an exception, so lets add code to deal with that:
+IP_URL = &quot;http://api.hostip.info/?ip=&quot;
+def get_coords(ip):
+	url = IP_URL + ip
+	content = None
+	try
+		content = urllib2.urlopen(url).read()
+	except URLError:
+		return
+			We'll just return nothing, no coordinates. Normally, we might log this, so we can track whether or not geocoding is broken, but for our purposes we'll just return none.
+			Next we want to check to see if there is actual content. If the website is broken it might not be giving us anything back:
+	if content:
+		#parse the xml and find the coordinates
+		pass
+			Now lets parse the content:
+	if content:
+		d = minidom.parseString(content)
+		coords = d.getElementsByTagName(&quot;gml:coordinates&quot;)
+		if coords and coords[0].childNodes[0].nodeValue:
+			lon, lat = coords[0].childNodes[0].nodeValue.split(',')
+			return db.GeoPt(lat, lon)
+			The reason we return db.GeoPt is that its part of GAE, a data point for storing latitude and longitude.</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-12">
+			<div class="concept-title">Debugging</div>
+			<div class="concept-content">Lets test to see if our code is working. Add this line to def get before it calls render_front():
+			self.write(repr(get_coords(self.request.remote_addr)))
+			First we call the function write, which outputs to the browser. Then we call repr. This is a handy trick for printing Python objects in HTML. When you print Python objects in HTML, it has angle brackets around them. repr makes them print properly. Then we call our function, get_coords, and call it with the requesting ip address (self.request.remote_addr).
+			When we save our code and reload the page, we see None at the top of the page. Thats better than an exception, but we didn't get a location.
+			Lets do some investigation: First lets look at the actual ip address:
+	def get(self):
+		self.write(self.request.remote_addr)
+		self.write(repr(get_coords(self.request.remote_addr)))
+		return self.render_front()
+			See what the browser returns now. 127.0.0.1. That means we're running this locally, so its not surprising that a service on the internet doesn't know what our local ip is. If we go to the web page, it lists 127.0.0.1 as a private address. Every machine's local ip address is 127.0.0.1. This is called the loopback address and its how a machine refers to itself. Its not a public ip address on the internet. Localhost, which we're running our webpage on, generally refers to that ip.
+			Lets cheat a little bit and add an ip to our code we know is real to our code:
+def get_coords(ip):
+	ip = &quot;4.2.2.2&quot;
+			We get datastore_types.GeoPt(39.944, -105.062) at the top.
+			So, our get_coords function is working, and we tested the error case as well.</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-13">
+			<div class="concept-title">Updating the Database</div>
+			<div class="concept-content">Go back to def post and add in this line after p = Art:
+			coords = get_coords(self.request.remote_addr)
+			Then we said, # if we have coordinates, add them to the Art.
+			Now, our Art object doesn't take any coordinates.
+			So, lets add to our Art object:
+class Art(db.Model):
+	title = db.StringProperty(required = True)
+	art = db.TextProperty(required = True)
+	created = db.DateTimeProperty(auto_now_add = True)
+	coords = db.GeoPtProperty()
+			We aren't making coords required because the page already has art in it, and we don't want to wipe out our existing contributions.
+			Now go back to the post function and replace # if we have coordinates, add them to the Art. with:
+if coords:
+	p.coords = coords
+			Now lets try submitting some art in our browser. It works, no exceptions.</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-14">
+			<div class="concept-title">Querying Coordinate Information</div>
+			<div class="concept-content">Here is our to do list, added to the MainPage handler:
+#find which arts have coords
+#if we have any arts with coords, make a map url
+#display the map url
+			The first part is fairly easy: Add this line before self.render:
+			points = filter(None, (a.coords for a in arts))
+			To prevent the program from iterating over the database multiple times, add this line above all that:
+			arts = list(arts)</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-15">
+			<div class="concept-title">Creating the Image URL</div>
+			<div class="concept-content">After the line points = filter(None, (a.coords for a in arts)) Add this:
+img_url = None
+if points:
+	img_url = gmaps_img(points)
+			Now add this function above get_coords
+GMAPS_URL = &quot;http://maps.googleapis.com/maps/api/staticmap?size=380x263&amp;sensor=false&amp;&quot;
+def gmaps_img(points):
+	markers = '&amp;'.join('markers=%s,%s' % p.lat, p.lon)
+						for p in points)
+	return GMAPS_URL + markers
+			This function takes in points, and adds them to the end of our URL as markers.</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-16">
+			<div class="concept-title">Putting it All Together</div>
+			<div class="concept-content">Now, we just need to display the image url.
+			We need to pass img_url to our template:
+			self.render('front.html', title=title, art=art, error=error, arts=arts, img_url=img_url)
+			Now we need to update our template. Its called front.html and located in the templates directory of the project.
+			Add these lines after the form:
+{% if img_url %}
+	&lt;img src=&quot;{{img_url}}&quot;&gt;
+{% endif %}
+			Now lets try it in the browser. If we have any art with coordinates, a map will appear!
+			To get it to appear on the right, add a class to your image in the template:
+{% if img_url %}
+	&lt;img class=&quot;map&quot;src=&quot;{{img_url}}&quot;&gt;
+{% endif %}
+			Then add a style section to your template:
+&lt;style type=&quot;text/css&quot;&gt;
+.map {
+	position: absolute;
+	right: 0;
+	top: 112px;
+}
+&lt;/style&gt;
+			Lets try adding some more ips to see if our map works
+			ip = &quot;23.24.209.141&quot;
+			Submit more ascii art and see if it adds a new marker. It works!</div>
+		</div>
+
+		<div class="concept" id="stage-5-2-17">
+			<div class="concept-title">Code</div>
+			<div class="concept-content">Our final code for main.py looks like this:
+import os
+import re
+import sys
+from string import letters
+import urllib2
+from xml.dom import minidom
+import webapp2
+import jinja2
+
+from google.appengine.ext import db
+
+template_dir = os.path.join(os.path.dirname(__file__), 'templates')
+jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
+	autoescape = True)
+
+art_key = db.Key.from_path('ASCIIChan', 'arts')
+
+def console(s):
+	&quot;&quot;&quot;Writes an error message (s) to the console.&quot;&quot;&quot;
+	sys.stderr.write('%s\n' % s)
+
+console(art_key)
+
+class Handler(webapp2.RequestHandler):
+  def write(self, *a, **kw):
+  	self.response.write(*a, **kw)
+
+  def render_str(self, template, **params):
+  	t = jinja_env.get_template(template)
+  	return t.render(params)
+
+  def render(self, template, **kw):
+  	self.write(self.render_str(template, **kw))
+
+GMAPS_URL = &quot;http://maps.googleapis.com/maps/api/staticmap?size=380x263&amp;sensor=false&amp;&quot;
+def gmaps_img(points):
+	markers = '&amp;'.join('markers=%s,%s' % (p.lat, p.lon) for p in points)
+	return GMAPS_URL + markers
+
+IP_URL = &quot;http://api.hostip.info/?ip=&quot;
+def get_coords(ip):
+	ip = &quot;4.2.2.2&quot;
+	ip = &quot;23.24.209.141&quot;
+	url = IP_URL + ip
+	content = None
+	try:
+		content = urllib2.urlopen(url).read()
+	except URLError:
+		return
+	if content:
+		d = minidom.parseString(content)
+		coords = d.getElementsByTagName(&quot;gml:coordinates&quot;)
+		if coords and coords[0].childNodes[0].nodeValue:
+			lon, lat = coords[0].childNodes[0].nodeValue.split(',')
+			return db.GeoPt(lat, lon)
+
+class Art(db.Model):
+	title = db.StringProperty(required = True)
+	art = db.TextProperty(required = True)
+	created = db.DateTimeProperty(auto_now_add = True)
+	coords = db.GeoPtProperty()
+
+class MainPage(Handler):
+	def render_front(self, error = '', title = '', art = ''):
+		arts = db.GqlQuery(
+			&quot;&quot;&quot;SELECT * FROM Art WHERE ANCESTOR IS :1 ORDER BY created DESC LIMIT 10&quot;&quot;&quot;, art_key)
+		#prevent running multiple queries
+		arts = list(arts)
+
+		# find which arts have coords
+		points = filter(None, (a.coords for a in arts))
+		img_url = None
+		if points:
+			img_url = gmaps_img(points)
+
+		#display the map url
+
+		self.render('front.html', title=title, art=art, error=error, arts=arts, img_url=img_url)
+
+	def get(self):
+		#self.write(self.request.remote_addr)
+		self.write(repr(get_coords(self.request.remote_addr)))
+		return self.render_front()
+
+	def post(self):
+		title = self.request.get('title')
+		art = self.request.get('art')
+		if title and art:
+			p = Art(parent = art_key, title=title, art=art)
+			coords = get_coords(self.request.remote_addr)
+			if coords:
+				p.coords = coords
+
+			p.put()
+			self.redirect('/')
+		else:
+			error = &quot;we need both a title and some artwork!&quot;
+			self.render_front(error=error, title=title, art=art, img_url=img_url)
+
+app = webapp2.WSGIApplication([('/', MainPage)], debug = True)</div>
+		</div>
+	</div><!--lesson div-->
 	</div><!--stage div-->
-
-
-
-
-
 
 {% endblock %}
