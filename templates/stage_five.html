@@ -50,6 +50,26 @@
 					<li><a href="#stage-5-2-17">Final Code</a></li>
 				</ol></div>
 
+			<h3>Stage 5.3</h3>
+			<div>
+			<a href="#stage-5-3"><strong>Recursion and Parallel Computing</strong></a>
+				<ol>
+					<li><a href="#stage-5-3-1">Infinite Power</a></li>
+					<li><a href="#stage-5-3-2">Long Words</a></li>
+					<li><a href="#stage-5-3-3">Counter</a></li>
+					<li><a href="#stage-5-3-4">Counter Quiz</a></li>
+					<li><a href="#stage-5-3-5">Expanding Our Grammar</a></li>
+					<li><a href="#stage-5-3-6">Recursive Definitions</a></li>
+					<li><a href="#stage-5-3-7">Ancestors</a></li>
+					<li><a href="#stage-5-3-8">Recursive Procedures</a></li>
+					<li><a href="#stage-5-3-9">Recursive Factorial</a></li>
+					<li><a href="#stage-5-3-10">Palindromes</a></li>
+					<li><a href="#stage-5-3-11">MapReduce</a></li>
+					<li><a href="#stage-5-3-12">Real World Example</a></li>
+					<li><a href="#stage-5-3-13">Distributed Work</a></li>
+					<li><a href="#stage-5-3-14">Summary of MapReduce</a></li>
+				</ol></div>
+
 		</div><!--accordion div-->
 	</div><!--sidebar div-->
 
@@ -763,7 +783,7 @@ app = webapp2.WSGIApplication([('/', MainPage)], debug = True)</code></pre></div
 			<p>Once the mappers have finished, a phase of MapReduce called shuffle and sort takes place. The shuffle is the movement of the intermediate records from the mappers to the reducers. The sort is the fact that the reducers will organize the sets of records, in our case the piles of cards, into sorted order.</p>
 			<p>Finally, each reducer works on one set of records at a time, or one pile of cards. It gets the key and then a list of all the values. In our case a store like New York City, and all the sales for that store. The reducer processes those values in some way, in our case we were adding up sales. Then it writes out the final results.</p></div>
 		</div>
-
+	</div><!--lesson div-->
 
 	</div><!--stage div-->
 
