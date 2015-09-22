@@ -709,22 +709,22 @@ app = webapp2.WSGIApplication([('/', MainPage)], debug = True)</code></pre></div
 	if (n) == 0:
 		return 1
 	else:
-		return n * factorial(n-1)
-			We need to first check if we've reached the base case, so we use an if for that:
-	if (n) == 0:
-		return 1
-			When n is not equal to 0, we use else: Then we have the recursive case:
-	else:
 		return n * factorial(n-1)</code></pre>
-			<p>It may seem strange that we're defining factorial using factorial, it seems circular. The reason its not circular is we have our base case. We have a case where we do stop. Every time we call factorial, instead of passing in the same value of n that we started with, we're passing in n-1, eventually we're going to get to 0. We eventually stop, return 1, and on the way there, we're going to be multiplying in all these values.</p>
-			<p>Lets step through what happens when we run this code. Suppose we called factorial(3). We're going to enter the procedure, the value of n is going to be 3. N is not equal to 0, so we return the value of n * factorial(n-1), so we're computing 3 * factorial(2). Now we're evaluating factorial(2). We enter the procedure again, this time the value of n is 2. We do the comparison, n does not equal 0, so we go to the else clause and return 2 * factorial(1). We call factorial again with factorial(1). We reenter factorial, but this time the value of n is 1. The if test is false, so now we're going to return the result of 1 * factorial(0). Now we call factorial(0), now the value of n is 0. The test is true, so we return 1. That gives us the solution to all our return statements, which is 6.</p></div>
+			<p>We need to first check if we've reached the base case, so we use an if for that:</p>
+<pre><code>	if (n) == 0:
+		return 1</code></pre>
+			When n is not equal to 0, we use else: Then we have the recursive case:
+<pre><code>	else:
+		return n * factorial(n-1)</code></pre>
+			<p>It may seem strange that we're defining <code>factorial</code> using <code>factorial</code>, it seems circular. The reason its not circular is we have our base case. We have a case where we do stop. Every time we call <code>factorial</code>, instead of passing in the same value of <code>n</code> that we started with, we're passing in <code>n-1</code>, eventually we're going to get to 0. We eventually stop, <code>return 1</code>, and on the way there, we're going to be multiplying in all these values.</p>
+			<p>Lets step through what happens when we run this code. Suppose we called <code>factorial(3)</code>. We're going to enter the procedure, the value of <code>n</code> is going to be 3. <code>n</code> is not equal to 0, so we return the value of <code>n * factorial(n-1)</code>, so we're computing <code>3 * factorial(2)</code>. Now we're evaluating <code>factorial(2)</code>. We enter the procedure again, this time the value of <code>n</code> is 2. We do the comparison, <code>n</code> does not equal 0, so we go to the <code>else</code> clause and return <code>2 * factorial(1)</code>. We call <code>factorial</code> again with <code>factorial(1)</code>. We reenter <code>factorial</code>, but this time the value of <code>n</code> is 1. The <code>if</code> test is false, so now we're going to return the result of <code>1 * factorial(0)</code>. Now we call <code>factorial(0)</code>, now the value of <code>n</code> is 0. The test is true, so we <code>return 1</code>. That gives us the solution to all our return statements, which is 6.</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-3-10">
 			<div class="concept-title">Palindromes</div>
 			<div class="concept-content"><p>We're going to do another example of defining a recursive procedure. The goal this time is to take in a string and determine whether or not its a palindrome. A palindrome reads the same way forwards and backwards. An example of a palindrome would be the word level. If we read it forwards, we get level, if we read it backwards, we get exactly the same thing. Another example would be the word a. If we read it forwards or backwards, we get the same result. The empty string, &quot;&quot; is also a palindrome.</p>
-			<p>Our goal is to define a procedure, that will take any string as input, and output True if that string is a palindrome.</p>
-			<p>Define a procedure, is_palindrome, that takes as input a string, and outputs a boolean indicating if the input string is a palindrome.</p>
+			<p>Our goal is to define a procedure, that will take any string as input, and output <code>True</code> if that string is a palindrome.</p>
+			<p>Define a procedure, <code>is_palindrome</code>, that takes as input a string, and outputs a boolean indicating if the input string is a palindrome.</p>
 			<p>Some hints: Define what it means to be a palindrome. We should think about the base case: &quot;&quot; --&gt;True. What if the input is not an empty string? One way to solve that would be to look at the first letter and last letter of the string. If those are equal, it might be a palindrome, its a palindrome if all the letters left over in the middle are also a palindrome. So, here is how we can break the question of whether a string is a palindrome into smaller steps: Our recursive case is going to test the first and last character of the string, and see if those are equal, if the first and last characters don't match, we know the result is false. If they do match, we need to check to see if the middle of the string is a palindrome.</p>
 <pre><code>def is_palindrome(s):
 	if s == '':
