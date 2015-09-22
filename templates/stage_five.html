@@ -704,16 +704,16 @@ app = webapp2.WSGIApplication([('/', MainPage)], debug = True)</code></pre></div
 
 		<div class="concept" id="stage-5-3-9">
 			<div class="concept-title">Recursive Factorial</div>
-			<div class="concept-content"><p>Define a procedure, factorial, that takes a natural number as its input, and outputs then number of ways to arrange the input number of items.</p>
+			<div class="concept-content"><p>Define a procedure, factorial, that takes a natural number as its input, and outputs the number of ways to arrange the input number of items.</p>
 <pre><code>def factorial(n):
 	if (n) == 0:
 		return 1
 	else:
 		return n * factorial(n-1)</code></pre>
-			<p>We need to first check if we've reached the base case, so we use an if for that:</p>
+			<p>We need to first check if we've reached the base case, so we use an <code>if</code> for that:</p>
 <pre><code>	if (n) == 0:
 		return 1</code></pre>
-			When n is not equal to 0, we use else: Then we have the recursive case:
+			<p>When <code>n</code> is not equal to 0, we use <code>else:</code> Then we have the recursive case:</p>
 <pre><code>	else:
 		return n * factorial(n-1)</code></pre>
 			<p>It may seem strange that we're defining <code>factorial</code> using <code>factorial</code>, it seems circular. The reason its not circular is we have our base case. We have a case where we do stop. Every time we call <code>factorial</code>, instead of passing in the same value of <code>n</code> that we started with, we're passing in <code>n-1</code>, eventually we're going to get to 0. We eventually stop, <code>return 1</code>, and on the way there, we're going to be multiplying in all these values.</p>
@@ -722,10 +722,10 @@ app = webapp2.WSGIApplication([('/', MainPage)], debug = True)</code></pre></div
 
 		<div class="concept" id="stage-5-3-10">
 			<div class="concept-title">Palindromes</div>
-			<div class="concept-content"><p>We're going to do another example of defining a recursive procedure. The goal this time is to take in a string and determine whether or not its a palindrome. A palindrome reads the same way forwards and backwards. An example of a palindrome would be the word level. If we read it forwards, we get level, if we read it backwards, we get exactly the same thing. Another example would be the word a. If we read it forwards or backwards, we get the same result. The empty string, &quot;&quot; is also a palindrome.</p>
+			<div class="concept-content"><p>We're going to do another example of defining a recursive procedure. The goal this time is to take in a string and determine whether or not its a palindrome. A palindrome reads the same way forwards and backwards. An example of a palindrome would be the word level. If we read it forwards, we get level, if we read it backwards, we get exactly the same thing. Another example would be the word a. If we read it forwards or backwards, we get the same result. The empty string, <code>&quot;&quot;</code> is also a palindrome.</p>
 			<p>Our goal is to define a procedure, that will take any string as input, and output <code>True</code> if that string is a palindrome.</p>
 			<p>Define a procedure, <code>is_palindrome</code>, that takes as input a string, and outputs a boolean indicating if the input string is a palindrome.</p>
-			<p>Some hints: Define what it means to be a palindrome. We should think about the base case: &quot;&quot; --&gt;True. What if the input is not an empty string? One way to solve that would be to look at the first letter and last letter of the string. If those are equal, it might be a palindrome, its a palindrome if all the letters left over in the middle are also a palindrome. So, here is how we can break the question of whether a string is a palindrome into smaller steps: Our recursive case is going to test the first and last character of the string, and see if those are equal, if the first and last characters don't match, we know the result is false. If they do match, we need to check to see if the middle of the string is a palindrome.</p>
+			<p>Some hints: Define what it means to be a palindrome. We should think about the base case: <code>&quot;&quot;</code> --&gt;<code>True</code>. What if the input is not an empty string? One way to solve that would be to look at the first letter and last letter of the string. If those are equal, it might be a palindrome, its a palindrome if all the letters left over in the middle are also a palindrome. So, here is how we can break the question of whether a string is a palindrome into smaller steps: Our recursive case is going to test the first and last character of the string, and see if those are equal, if the first and last characters don't match, we know the result is false. If they do match, we need to check to see if the middle of the string is a palindrome.</p>
 <pre><code>def is_palindrome(s):
 	if s == '':
 		return True
