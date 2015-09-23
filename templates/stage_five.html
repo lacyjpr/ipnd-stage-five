@@ -866,18 +866,18 @@ app = webapp2.WSGIApplication([('/', MainPage)], debug = True)</code></pre></div
 
 		<div class="concept" id="stage-5-5-3">
 			<div class="concept-title">What I Learned in Dash Project 1</div>
-			<div class="concept-content"><p>The rest of this lesson consists of doing the first three projects on Dash. The projects can be found <a target="_blank" href="https://dash.generalassemb.ly/projects">here</a>.</p>
+			<div class="concept-content"><p>The rest of this lesson consists of doing the first three projects on Dash, a website by General Assembly. The projects can be found <a target="_blank" href="https://dash.generalassemb.ly/projects">here</a>.</p>
 			<p>I'm not going to walk through the projects step by step. Instead I'm going to note the techniques I learned from each project.</p>
 			<p>Here is what I learned in Project 1:</p>
-			<p>Placeholder: The placeholder attribute lets you add default text to an input: &lt;input type=&quot;email&quot; placeholder=&quot;Your email&quot;&gt;</p>
-			<p>Background Images: You can set a background image for an entire page by using the css for body:</p>
+			<p><strong>Placeholder:</strong> The placeholder attribute lets you add default text to an input: &lt;input type=&quot;email&quot; placeholder=&quot;Your email&quot;&gt;</p>
+			<p><strong>Background Images:</strong> You can set a background image for an entire page by using the css for body:</p>
 <pre><code>body {
 	background: url(&quot;http://dash.ga.co/assets/anna-bg.png&quot;);
 	background-size: cover; /*prevents the background image from appearing tiled*/
 	background-position: center; /*centers the image on the page*/
-	}
-			<p>Styling Forms: You can apply styling to forms to make them look better:</p>
-input {
+	}</code></pre>
+			<p><strong>Styling Forms:</strong> You can apply styling to forms to make them look better:</p>
+<pre><code>input {
 	border: 0;
 	padding: 10;
 	font-size: 18px;
@@ -890,14 +890,14 @@ input[type=&quot;submit&quot;] {
 
 		<div class="concept" id="stage-5-5-4">
 			<div class="concept-title">What I Learned in Dash Project 2</div>
-			<div class="concept-content"<p>>Header: There's a special tag in HTML5 for headers called &lt;header&gt;. Its a container that holds other elements, like &lt;body&gt;, but for a websites header.</p>
-			<p>Navigation bars: Navigation bars are just a list of links with CSS styling:</p>
+			<div class="concept-content"><p><strong>Header:</strong> There's a special tag in HTML5 for headers called &lt;header&gt;. Its a container that holds other elements, like &lt;body&gt;, but for a websites header.</p>
+			<p><strong>Navigation bars:</strong> Navigation bars are just a list of links with CSS styling:</p>
 			<p>First, the list (which is contained in the header in this project):</p>
-<pre><code>	&lt;ul&gt;
+<pre><code>&lt;ul&gt;
 	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;About Me&lt;/a&gt;&lt;/li&gt;
 	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Best Poems&lt;/a&gt;&lt;/li&gt;
 	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Worst Poems&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;</code></pre>
+&lt;/ul&gt;</code></pre>
 			<p>Second, the CSS:</p>
 			<p>First, center all the text in the header:</p>
 <pre><code>header {
@@ -912,16 +912,16 @@ li {
 	display: inline; /*makes all the links line up in a row*/
 	padding: 0px 10px 0px 10px; /*move the links further apart*/
 	}</code></pre>
-			<p>Padding &amp; Margins: Sometimes you want to give an element a padding of 10px on all sides. In that case, use padding: 10px;.</p>
+			<p><strong>Padding &amp; Margins:</strong> Sometimes you want to give an element a padding of 10px on all sides. In that case, use padding: 10px;.</p>
 			<p>Sometimes you want to control each sides padding individually. To do that, like we just did above, give padding 4 values separated by spaces: padding: top right bottom left;. Another trick is to think of the compass rose mnemonic: &quot;Never Eat Shredded Wheat,&quot; or padding: north east south west. The same principle applies to margin.</p>
-			<p>Article: The &lt;article&gt; tag is used to group together multiple HTML elements that form a single piece of content. In this case, we wrapped each blog post in an article tag.</p>
-			<p>Centering text: Once we styled article, the posts looked good but were still aligned to the left of the screen. We fixed that with a simple trick:</p>
+			<p><strong>Article:</strong> The &lt;article&gt; tag is used to group together multiple HTML elements that form a single piece of content. In this case, we wrapped each blog post in an article tag.</p>
+			<p><strong>Centering text</strong>: Once we styled article, the posts looked good but were still aligned to the left of the screen. We fixed that with a simple trick:</p>
 <pre><code>article {
 	max-width: 500px;
 	padding: 20px;
 	margin: 0 auto; /*This sets the top and bottom margin to 0, and auto margin on the left and right, centering the content*/
 	}</code></pre>
-			<p>Mobile Responsiveness: What happens when we resize our browser, simulating a mobile device. The title and navigation look messed up.</p>
+			<p><strong>Mobile Responsiveness:</strong> What happens when we resize our browser, simulating a mobile device. The title and navigation look messed up.</p>
 			<p>We fix this using a media query, which allows us to set certain CSS styles that only activate when the browser is a certain width. Media queries need to go at the end of our regular styles in our CSS, because browsers read CSS from top to bottom, When you give it a command that conflicts with something you told it previously, it forgets the old style and implements the new one.</p>
 			<p>The syntax is as follows, along with the styling we used for our project:</p>
 <pre><code>@media (max-width: 500px) {
@@ -933,14 +933,14 @@ li {
 	padding: 5px;
 	}
 }</code></pre>
-			<p>Hex Colors: Example: #F00. Hex colors always start with a hash. The first character controls the amount of red, it ranges from 0 to F (100%) red. The second character controls the amount of green, which also ranges from 0 to F. The third character controls the amount of blue. Together, they make up RGB. Hex codes work by mixing the three primary colors. #000 is black, because there is no color, #FFF is white because all colors are present. #F00 is red because red is at 100% and the other two colors are at 0.</p>
-			<p>RGBA colors: This lets you add alpha, or transparency. RGBA colors have a less confusing syntax than hex colors. Instead of a 0-F scale, RGBA colors use a 0-255 scale, with the last digit, transparency using a 0-1 scale. This example would make white: rgba(255, 255, 255, 1)</p></div>
+			<p><strong>Hex Colors:</strong> Example: #F00. Hex colors always start with a hash. The first character controls the amount of red, it ranges from 0 to F (100%) red. The second character controls the amount of green, which also ranges from 0 to F. The third character controls the amount of blue. Together, they make up RGB. Hex codes work by mixing the three primary colors. #000 is black, because there is no color, #FFF is white because all colors are present. #F00 is red because red is at 100% and the other two colors are at 0.</p>
+			<p><strong>RGBA colors:</strong> This lets you add alpha, or transparency. RGBA colors have a less confusing syntax than hex colors. Instead of a 0-F scale, RGBA colors use a 0-255 scale, with the last digit, transparency using a 0-1 scale. This example would make white: rgba(255, 255, 255, 1)</p></div>
 		</div>
 
 		<div class="concept" id="stage-5-5-5">
 			<div class="concept-title">What I Learned in Dash Project 3</div>
-			<div class="concept-content"><p>Line-height: line-height lets you increase or decrease the vertical space between lines.</p>
-			<p>Manipulating Paragraphs: To slide a paragraph to the bottom of a div, change your CSS for paragraph and div:</p>
+			<div class="concept-content"><p><strong>Line-height:</strong> line-height lets you increase or decrease the vertical space between lines.</p>
+			<p><strong>Manipulating Paragraphs:</strong> To slide a paragraph to the bottom of a div, change your CSS for paragraph and div:</p>
 <pre><code>p {
 	position: absolute;
 	bottom: 0;
@@ -948,17 +948,17 @@ li {
 div {
 	position: relative;
 }</code></pre>
-			<p>Small: The &lt;small&gt; tag makes text smaller and can help you maintain visual hierarchy.</p>
-			<p>Span: You can use a &lt;span&gt; tag inside another tag to make any bit of content display differently than the rest of the tag. Then, you can use CSS to style any span you give a class name to. Spans are inline elements, so be sure to use appropriate styling.</p>
-			<p>Transparency and gradients: There are two types of gradients: Radial gradients radiate outward in all directions from a central point. Linear gradients only go in one direction, in a line. We'll be working with linear gradients.</p>
+			<p><strong>Small:</strong> The &lt;small&gt; tag makes text smaller and can help you maintain visual hierarchy.</p>
+			<p><strong>Span:</strong> You can use a &lt;span&gt; tag inside another tag to make any bit of content display differently than the rest of the tag. Then, you can use CSS to style any span you give a class name to. Spans are inline elements, so be sure to use appropriate styling.</p>
+			<p><strong>Transparency and gradients:</strong> There are two types of gradients: Radial gradients radiate outward in all directions from a central point. Linear gradients only go in one direction, in a line. We'll be working with linear gradients.</p>
 			<p>Gradients aren't supported by every browser, so we have to write a lot of repetitive CSS.</p>
 			<p>This: background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,0.4)); doesn't work now. In the future it will. Theoretically it fades from black to 40% transparent black. We keep it in our CSS to future proof it. The rest of our gradients need vendor prefixes:</p>
 <pre><code>background-color: rgba(0,0,0,1); /*for IE, which doesn't support gradients, this will be overriden below by other browsers*/
 background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,0.4)); /*future-proofing our code*/
 background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,0.4)); /*Safari, Chrome and Opera*/
 background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,0.4)); /*Firefox*/</code></pre>
-			<p>Web fonts: You can find lots of fancy fonts at <a target="_blank" href="http://www.google.com/fonts">Google Web Fonts</a>. Find the font you want to use and click the quick-use button on the bottom right. It looks like an arrow. Scroll down to box #3, &quot;Add this code to your website.&quot; Copy the code and paste it in as the first element in the &lt;head&gt; section of your document. Then copy the contents of box #4, &quot;Integrate the fonts into your CSS&quot; and paste it into the style you want to use it for in your CSS.</p>
-			<p>JavaScript: The design for the website had the menu descriptions hidden until clicked, so we had to add some CSS and some JavaScript to make it work.</p>
+			<p><strong>Web fonts:</strong> You can find lots of fancy fonts at <a target="_blank" href="http://www.google.com/fonts">Google Web Fonts</a>. Find the font you want to use and click the quick-use button on the bottom right. It looks like an arrow. Scroll down to box #3, &quot;Add this code to your website.&quot; Copy the code and paste it in as the first element in the &lt;head&gt; section of your document. Then copy the contents of box #4, &quot;Integrate the fonts into your CSS&quot; and paste it into the style you want to use it for in your CSS.</p>
+			<p><strong>JavaScript:</strong> The design for the website had the menu descriptions hidden until clicked, so we had to add some CSS and some JavaScript to make it work.</p>
 			<p>First, the CSS: We gave paragraphs (the menu items and descriptions) a height of 30px. Since we had previously stuck them to the bottom of each div, that left only the menu items showing. Then we gave &lt;small&gt; (the menu descriptions) an opacity of 0. Then we created two new style entries, which will be toggled on by JavaScript:</p>
 <pre><code>.show-description p {
 	height: 150px;
