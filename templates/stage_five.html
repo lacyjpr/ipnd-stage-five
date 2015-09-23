@@ -70,6 +70,14 @@
 					<li><a href="#stage-5-3-14">Summary of MapReduce</a></li>
 				</ol></div>
 
+			<h3>Stage 5.4</h3>
+			<div>
+			<a href="#stage-5-4"><strong>Solving Big Problems</strong></a>
+				<ol>
+					<li><a href="#stage-5-4-1">Introduction</a></li>
+					<li><a href="#stage-5-4-2">Solving Big Problems</a></li>
+				</ol></div>
+
 		</div><!--accordion div-->
 	</div><!--sidebar div-->
 
@@ -800,7 +808,7 @@ app = webapp2.WSGIApplication([('/', MainPage)], debug = True)</code></pre></div
 			<div class="concept-title">Solving Big Problems</div>
 			<div class="concept-content"><p>Peter uses an approach that we learned in Stage 1, <a target="_blank" href="/stage1#stage-1-3-10">Code, Test &amp; Refine</a> and in Stage 2 <a target="_blank" href="/stage2#stage-2-7">How to Solve Problems</a>, but adapts it to solving a large problem.</p>
 			<p>So, here is my take on Peter's process:</p>
-			<p>First, he takes time to fully comprehend the problem and break it down into smaller parts, which he calls a &quot;concept inventory&quot;:</p>
+			<p><strong>First</strong>, he takes time to fully comprehend the problem and break it down into smaller parts, which he calls a &quot;concept inventory&quot;:</p>
 			<p>board</p>
 			<p>letters</p>
 			<p>--words</p>
@@ -812,7 +820,7 @@ app = webapp2.WSGIApplication([('/', MainPage)], debug = True)</code></pre></div
 			<p>--bonus</p>
 			<p>dictionary</p>
 			<p>blank tiles</p>
-			<p>Second, he goes through his list and figures out basically how to implement each of the ideas in the inventory, seeing if there are any difficulties or areas that might be hard to implement.</p>
+			<p><strong>Second</strong>, he goes through his list and figures out basically how to implement each of the ideas in the inventory, seeing if there are any difficulties or areas that might be hard to implement.</p>
 			<p>board - 2d array, may need a 2nd board to account for bonus squares</p>
 			<p>letters - str</p>
 			<p>--words - str</p>
@@ -824,14 +832,14 @@ app = webapp2.WSGIApplication([('/', MainPage)], debug = True)</code></pre></div
 			<p>--bonus - mapping of position on the board to DW, etc.</p>
 			<p>dictionary - set(words)</p>
 			<p>blank tiles - str, dealing with it will be an issue later. Not only do we have to try all possiblities for the letter, the scoring rules are different.</p>
-			<p>Third, he assures himself that solving the problem is doable. He doesn't quite know how each solution will work, but nothing he sees is unsolvable.</p>
-			<p>Fourth, he reminds himself and the audience of the notion of pacing. He isn't going to sit down for 20 minutes and solve the problem. Its going to have to be incrementally, where he sets intermediate goals along the way. Without that pacing, you can lose focus and get discouraged that there is so much to do. If you break the problem into bite-sized pieces, you can say &quot;I'm almost there&quot; and move on to the next part</p>
-			<p>Fifth, he finds a logical place to start. In this case, he starts with finding legal words from a hand. He spends time using pen and paper to work out the problem before coding, making sure he has a full understanding of what is going on and how to implement it before actually using the editor.</p>
-			<p>Sixth, he writes the code for that function. He's not quite satisfied with the function, but he moves on for the time being.</p>
-			<p>Seventh, he writes tests for the function to see if its performing correctly. These tests will be important as he makes changes to the function later.</p>
-			<p>Eighth, he refines his find legal words function by using the notion of prefixes (and tests that too.)</p>
-			<p>Ninth, he finally refines his find legal words function to a form he is satisfied with (and tests it as well.)</p>
-			<p>Tenth, he takes a pacing break to congratulate himself on his progress.</p>
+			<p><strong>Third</strong>, he assures himself that solving the problem is doable. He doesn't quite know how each solution will work, but nothing he sees is unsolvable.</p>
+			<p><strong>Fourth</strong>, he reminds himself and the audience of the notion of pacing. He isn't going to sit down for 20 minutes and solve the problem. Its going to have to be incrementally, where he sets intermediate goals along the way. Without that pacing, you can lose focus and get discouraged that there is so much to do. If you break the problem into bite-sized pieces, you can say &quot;I'm almost there&quot; and move on to the next part</p>
+			<p><strong>Fifth</strong>, he finds a logical place to start. In this case, he starts with finding legal words from a hand. He spends time using pen and paper to work out the problem before coding, making sure he has a full understanding of what is going on and how to implement it before actually using the editor.</p>
+			<p><stron>Sixth</stron>, he writes the code for that function. He's not quite satisfied with the function, but he moves on for the time being.</p>
+			<p><strong>Seventh</strong>, he writes tests for the function to see if its performing correctly. These tests will be important as he makes changes to the function later.</p>
+			<p><strong>Eighth</strong>, he refines his find legal words function by using the notion of prefixes (and tests that too.)</p>
+			<p><strong>Ninth</strong>, he finally refines his find legal words function to a form he is satisfied with (and tests it as well.)</p>
+			<p><strong>Tenth</strong>, he takes a pacing break to congratulate himself on his progress.</p>
 			<p>Then, he repeats steps Five through Ten, finding the next logical place to start by going back to his concept inventory, coding, testing and refining until the program is complete.</p></div>
 		</div>
 	</div><!--lesson div-->
