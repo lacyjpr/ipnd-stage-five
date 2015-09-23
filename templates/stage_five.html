@@ -351,9 +351,9 @@ bio [&quot;email&quot;] = &quot;james.williams@udacity.com&quot;</code></pre></d
 			<div class="concept-title">JSON</div>
 			<div class="concept-content"><p>JSON serves the same purpose as XML, which is that its a nice computer and human readable way to exchange data. It stands for JavaScript Object Notation. JSON is actually valid JavaScript code. It basically looks like a dictionary:</p>
 <pre><code>{&quot;itineraries&quot;: [{&quot;from&quot;: &quot;SFO&quot;,
-				  &quot;to&quot;: &quot;IAD&quot;},
+					&quot;to&quot;: &quot;IAD&quot;},
 				 {&quot;from&quot;: &quot;IAD&quot;,
-				  &quot;to&quot;: &quot;SEA&quot;}]
+					&quot;to&quot;: &quot;SEA&quot;}]
 }</code></pre>
 			<p>We have a dictionary, its got a key called itineraries, whose value may be a list of other dictionaries. In this case, we have a dictionary for each leg.</p>
 			<p>JSON is really handy for expressing these types of objects. Anything you can express in XML, you can also express in JSON. JSON is a little less verbose because you don't need opening and closing tags. You can build things out of dictionaries, you can also have lists, which use brackets just like Python does, a list can also be the value of a dictionary, or an item in a list.</p>
@@ -573,15 +573,15 @@ def console(s):
 console(art_key)
 
 class Handler(webapp2.RequestHandler):
-  def write(self, *a, **kw):
-  	self.response.write(*a, **kw)
+	def write(self, *a, **kw):
+	self.response.write(*a, **kw)
 
-  def render_str(self, template, **params):
-  	t = jinja_env.get_template(template)
-  	return t.render(params)
+	def render_str(self, template, **params):
+	t = jinja_env.get_template(template)
+	return t.render(params)
 
-  def render(self, template, **kw):
-  	self.write(self.render_str(template, **kw))
+	def render(self, template, **kw):
+	self.write(self.render_str(template, **kw))
 
 GMAPS_URL = &quot;http://maps.googleapis.com/maps/api/staticmap?size=380x263&amp;sensor=false&amp;&quot;
 def gmaps_img(points):
@@ -848,6 +848,271 @@ app = webapp2.WSGIApplication([('/', MainPage)], debug = True)</code></pre></div
 			<p><strong>Then</strong>, he repeats steps Five through Ten, finding the next logical place to start by going back to his concept inventory, coding, testing and refining until the program is complete.</p></div>
 		</div>
 	</div><!--lesson div-->
+
+	<div class="lesson" id="stage-5-5">
+		<h2>Stage 5.5 Making Pages Look Good</h2>
+
+		<div class="concept" id="stage-5-5-1">
+			<div class="concept-title">Setting up Chrome's Dev Tools</div>
+			<div class="concept-content">Lets open up Chrome and look at a mobile view of Google's Web Fundamentals site https://developers.google.com/web/fundamentals. First go to the site, then open developer tools using the hamburger menu on the top right or control-shift-i on a Windows machine.
+			Next, hit the emulator button, which is the second button on the top left of the developer tools window. It sort of looks like a cell phone. Choose a device at the top, and you can start loading pages to see how they look. Chrome has a ton of pre-defined devices that you can choose from. It automatically sets the viewport size, the user agent, device pixel ratio, and enables touch emulation. Now you can see how a page renders across different devices without ever leaving Chrome.
+			Chrome has several other things that it can emulate for you in the emulation panel. Hit escape to bring it up.</div>
+		</div>
+
+		<div class="concept" id="stage-5-5-1">
+			<div class="concept-title">Emulators, Simulators and Real Devices</div>
+			<div class="concept-content">You're going to need to test your page across a wide range of devices, and purchasing all those devices isn't really practical. Thats why simulators or emulators are great tools. They aren't always 100% accurate because they're on different hardware, but they'll often get the job done. For our purposes, they'll be just fine. Aside from the emulator built in to Chrome, also check out cloud based BrowserStack http://www.browserstack.com/</div>
+		</div>
+
+		<div class="concept" id="stage-5-5-1">
+			<div class="concept-title">What I Learned in Dash Project 1</div>
+			<div class="concept-content">The rest of this lesson consists of doing the first three projects on Dash. The projects can be found here https://dash.generalassemb.ly/projects
+			I'm not going to walk through the projects step by step. Instead I'm going to note the techniques I learned from each project.
+			Here is what I learned in Project 1:
+			Placeholder: The placeholder attribute lets you add default text to an input: &lt;input type=&quot;email&quot; placeholder=&quot;Your email&quot;&gt;
+			Background Images: You can set a background image for an entire page by using the css for body:
+ body {
+	background: url(&quot;http://dash.ga.co/assets/anna-bg.png&quot;);
+	background-size: cover; /*prevents the background image from appearing tiled*/
+	background-position: center; /*centers the image on the page*/
+	}
+			Styling Forms: You can apply styling to forms to make them look better:
+input {
+	border: 0;
+	padding: 10;
+	font-size: 18px;
+	}
+input[type=&quot;submit&quot;] {
+	background: red;
+	color: white;
+	}</div>
+		</div>
+
+		<div class="concept" id="stage-5-5-1">
+			<div class="concept-title">What I Learned in Dash Project 2</div>
+			<div class="concept-content">Header: There's a special tag in HTML5 for headers called &lt;header&gt;. Its a container that holds other elements, like &lt;body&gt;, but for a websites header.
+			Navigation bars: Navigation bars are just a list of links with CSS styling:
+			First, the list (which is contained in the header in this project):
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;About Me&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Best Poems&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Worst Poems&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+			Second, the CSS:
+			First, center all the text in the header:
+header {
+	text-align: center;
+}
+			Second, style the list elements
+ul {
+	padding: 10px;
+	background: black; /*make the list look like a bar*/
+	}
+li {
+	display: inline; /*makes all the links line up in a row*/
+	padding: 0px 10px 0px 10px; /*move the links further apart*/
+	}
+			Padding &amp; Margins: Sometimes you want to give an element a padding of 10px on all sides. In that case, use padding: 10px;.
+			Sometimes you want to control each sides padding individually. To do that, like we just did above, give padding 4 values separated by spaces: padding: top right bottom left;. Another trick is to think of the compass rose mnemonic: &quot;Never Eat Shredded Wheat, or padding: north east south west. The same principle applies to margin.
+			Article: The &lt;article&gt; tag is used to group together multiple HTML elements that form a single piece of content. In this case, we wrapped each blog post in an article tag.
+			Centering text: Once we styled article, the posts looked good but were still aligned to the left of the screen. We fixed that with a simple trick:
+article {
+	max-width: 500px;
+	padding: 20px;
+	margin: 0 auto; /*This sets the top and bottom margin to 0, and auto margin on the left and right, centering the content*/
+	}
+			Mobile Responsiveness: What happens when we resize our browser, simulating a mobile device. The title and navigation look messed up.
+			We fix this using a media query, which allows us to set certain CSS styles that only activate when the browser is a certain width. Media queries need to go at the end of our regular styles in our CSS, because browsers read CSS from top to bottom, When you give it a command that conflicts with something you told it previously, it forgets the old style and implements the new one.
+			The syntax is as follows, along with the styling we used for our project:
+@media (max-width: 500px) {
+	h1 {
+	font-size 36px;
+	}
+	li {
+	display: block;
+	padding: 5px;
+	}
+}
+			Hex Colors: Example: #F00. Hex colors always start with a hash. The first character controls the amount of red, it ranges from 0 to F (100%) red. The second character controls the amount of green, which also ranges from 0 to F. The third character controls the amount of blue. Together, they make up RGB. Hex codes work by mixing the three primary colors. #000 is black, because there is no color, #FFF is white because all colors are present. #F00 is red because red is at 100% and the other two colors are at 0.
+			RGBA colors: This lets you add alpha, or transparency. RGBA colors have a less confusing syntax than hex colors. Instead of a 0-F scale, RGBA colors use a 0-255 scale, with the last digit, transparency using a 0-1 scale. This example would make white: rgba(255, 255, 255, 1)</div>
+		</div>
+
+		<div class="concept" id="stage-5-5-1">
+			<div class="concept-title">What I Learned in Dash Project 3</div>
+			<div class="concept-content">Line-height: line-height lets you increase or decrease the vertical space between lines.
+			Manipulating Paragraphs: To slide a paragraph to the bottom of a div, change your CSS for paragraph and div:
+p {
+	position: absolute;
+	bottom: 0;
+}
+div {
+	position: relative;
+}
+			Small: The &lt;small&gt; tag makes text smaller and can help you maintain visual hierarchy.
+			Span: You can use a &lt;span&gt; tag inside another tag to make any bit of content display differently than the rest of the tag. Then, you can use CSS to style any span you give a class name to. Spans are inline elements, so be sure to use appropriate styling.
+			Transparency and gradients: There are two types of gradients: Radial gradients radiate outward in all directions from a central point. Linear gradients only go in one direction, in a line. We'll be working with linear gradients.
+			Gradients aren't supported by every browser, so we have to write a lot of repetitive CSS.
+			This: background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,0.4)); doesn't work now. In the future it will. Theoretically it fades from black to 40% transparent black. We keep it in our CSS to future proof it. The rest of our gradients need vendor prefixes:
+background-color: rgba(0,0,0,1); /*for IE, which doesn't support gradients, this will be overriden below by other browsers*/
+background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,0.4)); /*future-proofing our code*/
+background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,0.4)); /*Safari, Chrome and Opera*/
+background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,0.4)); /*Firefox*/
+			Web fonts: You can find lots of fancy fonts at Google Web Fonts http://www.google.com/fonts. Find the font you want to use and click the quick-use button on the bottom right. It looks like an arrow. Scroll down to box #3, &quot;Add this code to your website.&quot; Copy the code and paste it in as the first element in the &lt;head&gt; section of your document. Then copy the contents of box #4, &quot;Integrate the fonts into your CSS&quot; and paste it into the style you want to use it for in your CSS.
+			JavaScript: The design for the website had the menu descriptions hidden until clicked, so we had to add some CSS and some JavaScript to make it work.
+			First, the CSS: We gave paragraphs (the menu items and descriptions) a height of 30px. Since we had previously stuck them to the bottom of each div, that left only the menu items showing. Then we gave &lt;small&gt; (the menu descriptions) an opacity of 0. Then we created two new style entries, which will be toggled on by JavaScript:
+.show-description p {
+	height: 150px;
+}
+.show-description small {
+	opacity: 1;
+}
+			We added these to the class of each div, like this: &lt;div class=&quot;first show-description&quot;&gt;
+			Second the JavaScript:
+			We added the jQuery library to the top of the &lt;head&gt; section. (You can use a locally hosted version, or Google or jQuery's hosted version. In this example, we're using Dash's local copy)
+			&lt;script src=&quot;/assets/jquery.js&quot;&gt;&lt;/script&gt;
+			Then we built our function. The function toggles the .show-description class. If a normal div is clicked, it takes the class .show description, and if a div with the class .show-description is clicked, the class goes away. Here is the function:
+$('div').on('click', function() {
+	$(this).toggleClass('show-description');
+});
+			This function didn't work for me.
+			The normal state of the menu is supposed to be menu items only, descriptions on click. It was the opposite for me. The entire menu item and description showed by default.
+			I added a line to toggle the .show-description class off by default that made the menu behave as expected:
+$('div').toggleClass('show-description')
+$('div').on('click', function() {
+	$(this).toggleClass('show-description');
+});
+			Finally, we added some more CSS to animate the transitions between toggled and un-toggled.
+p {
+	transition: height .5s;
+	-webkit-transition: height .5s;
+	-moz-transition: height .5s;
+}</div>
+		</div>
+
+		<div class="concept" id="stage-5-5-1">
+			<div class="concept-title">Dash Project 3 Final Code</div>
+			<div class="concept-content">Here is the Dash Project 3 code for future reference
+&lt;!DOCTYPE html&gt;
+
+&lt;head&gt;
+&lt;script src=&quot;/assets/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'&gt;
+&lt;style&gt;
+body {
+	font-family: helvetica, sans-serif;
+	margin: 0 auto;
+	max-width: 600px;
+	background: #232323;
+}
+div {
+	height: 200px;
+	background-size: cover;
+	position: relative;
+	margin: 40px 0 0 0;
+	border-radius: 12px;
+}
+h1 {
+	font-family: 'Londrina Shadow', cursive;
+	text-align: center;
+	font-size: 75px;
+	color: #aaaaaa;
+	margin: 60px 0 0 0;
+}
+h2 {
+	text-align: center;
+	color: #bbbbbb;
+	margin: 0px 0 70px 0;
+}
+p {
+	color: rgba(255,255,255,1);
+	background: black;
+	background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+	background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+	background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+	padding: 10px;
+	line-height: 28px;
+	text-align: justify;
+	position: absolute;
+	bottom: 0;
+	margin: 0;
+	height: 30px;
+	transition: height .5s;
+	-webkit-transition: height .5s;
+	-moz-transition: height .5s;
+}
+small {
+	opacity: 0;
+}
+.show-description p {
+	height: 150px;
+}
+.show-description small {
+	opacity: 1;
+}
+.first{
+	background-image: url(&quot;http://dash.ga.co/assets/firstcourse.jpg&quot;);
+}
+.second{
+	background-image: url(&quot;http://dash.ga.co/assets/secondcourse.jpg&quot;);
+}
+.dessert{
+	background-image: url(&quot;http://dash.ga.co/assets/dessertcourse.jpg&quot;);
+}
+.price {
+	float: right;
+}
+@media (max-width: 500px) {
+	h1 {
+	font-size: 50px;
+	margin-top: 20px;
+	line-height: 40px;
+	}
+	h2 {
+	font-size: 20px;
+	margin: 20px 0 30px 0;
+	}
+	div {
+	margin: 20px 12px 0 12px;
+	}
+	p {
+	font-size: 20px;
+	line-height: 24px;
+	}
+	small {
+	font-size: 16px;
+	}
+}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;h1&gt;esha's restaurant&lt;/h1&gt;
+&lt;h2&gt;A New York City Eatery&lt;/h2&gt;
+&lt;div class=&quot;first show-description&quot;&gt;
+	&lt;p&gt;welsh onion soko &lt;span class=&quot;price&quot;&gt;$14&lt;/span&gt;&lt;br /&gt;
+	&lt;small&gt;Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. &lt;/small&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;second show-description&quot;&gt;
+	&lt;p&gt;pastrami boudin tongue &lt;span class=&quot;price&quot;&gt;$22&lt;/span&gt;&lt;br /&gt;
+	&lt;small&gt;Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.&lt;/small&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;dessert show-description&quot;&gt;
+	&lt;p&gt;fruitcake marzipan pudding dragee &lt;span class=&quot;price&quot;&gt;$8&lt;/span&gt;&lt;br /&gt;
+	&lt;small&gt;Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.&lt;/small&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+	$('div').toggleClass('show-description')
+	$('div').on('click', function() {
+	$(this).toggleClass('show-description');
+	});
+&lt;/script&gt;
+&lt;/body&gt;</div>
+		</div>
+
+
 	</div><!--stage div-->
 
 {% endblock %}
