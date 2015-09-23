@@ -785,6 +785,56 @@ app = webapp2.WSGIApplication([('/', MainPage)], debug = True)</code></pre></div
 		</div>
 	</div><!--lesson div-->
 
+	<div class="lesson" id="stage-5-4">
+		<h2>Stage 5.4 Solving Big Problems</h2>
+			<div class="concept-content">
+		<div class="concept" id="stage-5-4-1">
+			<div class="concept-title">Introduction</div>
+			<div class="concept-content">This lesson is taken from the Udacity course <a target="_blank" href="http://www.udacity.com/course/cs212">Design of Computer Programs</a>, taught by Peter Norvig. Its the sixth lesson in that course. I encourage you to watch it yourself for additional insight. The course is free to sign up for and take through Udacity.
+			In it, Peter writes a program to find the highest scoring play in a crossword tile game, like Scrabble or Words With Friends.
+			Because the pace of the lesson is very high and the Python very advanced, the instructions implore us not to focus on the details of the code but on Peter's process, his approach to tackling a huge problem.
+			So, for this lesson, I'm abandoning my usual detailed note taking and will convey my take on Peter's approach to solving big problems.</div>
+		</div>
+
+		<div class="concept" id="stage-5-4-1">
+			<div class="concept-title">Solving Big Problems</div>
+			<div class="concept-content">Peter uses an approach that we learned in Stage 1, <a target="_blank" href="/stage1#stage-1-3-10">Code, Test &amp; Refine</a> and in Stage 2 <a target="_blank" href="/stage2#stage-2-7">How to Solve Problems</a>, but adapts it to solving a large problem.
+			So, here is my take on Peter's process:
+			First, he takes time to fully comprehend the problem and break it down into smaller parts, which he calls a &quot;concept inventory&quot;:
+			board
+			letters
+			--words
+			--hand
+			legal play
+			score
+			--letters
+			--play
+			--bonus
+			dictionary
+			blank tiles
+			Second, he goes through his list and figures out basically how to implement each of the ideas in the inventory, seeing if there are any difficulties or areas that might be hard to implement.
+			board - 2d array, may need a 2nd board to account for bonus squares
+			letters - str
+			--words - str
+			--hand - str
+			legal play - function, plays will need a position, direction, and the word itself
+			score - function
+			--letters - dictionary {'Z': 10}
+			--play - function
+			--bonus - mapping of postion on the board to DW, etc.
+			dictionary - set(words)
+			blank tiles - str, dealing with it will be an issue later. Not only do we have to try all possiblities for the letter, the scoring rules are different.
+			Third, he assures himself that solving the problem is doable. He doesn't quite know how each solution will work, but nothing he sees is unsolveable.
+			Fourth, he reminds himself and the audience of the notion of pacing. He isn't going to sit down for 20 minutes and solve the problem. Its going to have to be incrementally, where he sets intermediate goals along the way. Without that pacing, you can lose focus and get discouraged that there is so much to do. If you break the problem into bite-sized pieces, you can say &quot;I'm almost there&quot; and move on to the next part
+			Fifth, he finds a logical place to start. In this case, he starts with finding legal words from a hand. He spends time using pen and paper to work out the problem before coding, making sure he has a full understanding of what is going on and how to implement it before actually using the editor.
+			Sixth, he writes the code for that function. He's not quite satisfied with the function, but he moves on for the time being.
+			Seventh, he writes tests for the function to see if its performing correctly. These tests will be important as he makes changes to the function later.
+			Eighth, he refines his find legal words function by using the notion of prefixes (and tests that too.)
+			Ninth, he finally refines his find legal words function to a form he is satisfied with (and tests it as well.)
+			Tenth, he takes a pacing break to congratulate himself on his progress.
+			Then, he repeats steps Five through Ten, finding the next logical place to start by going back to his concept inventory, coding testing and refining until the progam is complete.</div>
+		</div>
+	</div><!--lesson div-->
 	</div><!--stage div-->
 
 {% endblock %}
