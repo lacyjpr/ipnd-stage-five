@@ -8,11 +8,11 @@ $(document).ready(function(){
 });
 
 //Accordion widget for the sidebar. From jQueryui.com
-	$(function() {
-		$( "#accordion" ).accordion({
-		heightStyle: "content",
-		collapsible: true,
-		active: false,
-		animate: 100
-		});
+$(function() {
+	$( "#accordion" ).accordion({
+	heightStyle: "content",
+	collapsible: true,
+	active: false,
+	animate: 100
 	});
+});
