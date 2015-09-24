@@ -34,7 +34,7 @@ h2 {
 }
 
 h3 {
-	padding:0 0 0 20px;
+	padding:0px;
 	margin:0px;
 }
 
@@ -65,10 +65,6 @@ textarea#styled1 {
 	width: 99%;
 	height: 40px;
 }
-
-/*#accordion .ui-accordion-content {
-	overflow-y: auto;
-}*/
 
 .concept {
 	background-color: cyan;
