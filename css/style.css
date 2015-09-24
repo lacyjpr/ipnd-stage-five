@@ -34,7 +34,7 @@ h2 {
 }
 
 h3 {
-	padding:0px;
+	padding:0 0 0 20px;
 	margin:0px;
 }
 
@@ -66,10 +66,9 @@ textarea#styled1 {
 	height: 40px;
 }
 
-#accordion .ui-accordion-content {
-	/*max-height: 300px;*/
+/*#accordion .ui-accordion-content {
 	overflow-y: auto;
-}
+}*/
 
 .concept {
 	background-color: cyan;
@@ -119,13 +118,6 @@ textarea#styled1 {
 	margin-left: 10px;
 	width: 200px;
 	text-align: left;
-}
-
-.sidebar ul {
-	list-style-type: none; /*eliminate bullets*/
-	padding-left: 0px; /*eliminate default padding so text aligns left in sidebar*/
-	padding-right: 0px;
-	margin: 0px;
 }
 
 .tab {
