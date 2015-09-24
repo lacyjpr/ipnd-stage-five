@@ -1141,7 +1141,7 @@ small {
 
 		<div class="concept" id="stage-5-6-2">
 			<div class="concept-title">Experimentation</div>
-			<div class="concept-content"><p>I had three thing I wanted to try: Collapsing the divs in my notes to make them shorter, Making the table of contents sidebar the same height as my content, and Making my tables of contents collapse.</p>
+			<div class="concept-content"><p>I had three things I wanted to try: Collapsing the divs in my notes to make them shorter, Making the table of contents sidebar the same height as my content, and Making my tables of contents collapse.</p>
 			<p>The first thing I tried was collapsing the divs in my notes to make them more manageable. I found some code to implement it at <a target="_blank" href="http://designgala.com/how-to-expand-collapse-toggle-div-layer-using-jquery/">designgala.com</a>.</p>
 <pre><code>jQuery(document).ready(function() {
 	jQuery(".wrapper").hide();
@@ -1150,7 +1150,7 @@ small {
 		jQuery(this).next(".wrapper").slideToggle(10);
 	});
 });</code></pre>
-			<p>Despite the weird syntax, using jQuery instead of $, it worked. First I tried collapsing each individual concept, but didn't like the way it looked at all. Then, I tried collapsing each lesson. That worked too, but it looked even worse and it made my tables of contents non-functional, because the tables were pointing to hidden elements.</p>
+			<p>Despite the weird syntax, using <code>jQuery</code> instead of <code>$</code>, it worked. First I tried collapsing each individual concept, but didn't like the way it looked at all. Then, I tried collapsing each lesson. That worked too, but it looked even worse and it made my tables of contents non-functional, because the tables were pointing to hidden elements.</p>
 			<p>So, I gave up on the idea of collapsing divs.</p>
 			<p>I had two other things I wanted to try out: Fixing my sidebar height and collapsing my tables of contents.</p>
 			<p>The table of contents sidebar height had been bothering me for a long time. You can see what my sidebars looked like before at <a target="_blank" href="http://stage-four.appspot.com">http://stage-four.appspot.com</a>. Navigate to one of the notes pages. The sidebar runs out long before the content does, leaving a long expanse of white space on the left. It looks terrible to me. I had tried to fix it before with pure CSS, and never came up with a suitable solution. I know that you can fix it with flexbox, but this is a JavaScript exercise so bear with me.</p>
@@ -1158,11 +1158,11 @@ small {
 <pre><code>$(document).ready(function(){
 $("#side").height( $("#main").height() );
 });</code></pre>
-			<p>I changed the names of the selectors to ".sidebar" and ".stage", added a .stage div that wrapped around all of my content, and put the code in my script.js file.</p>
-			<p>It worked, sort of. I had two problems: First, The length of the sidebar was about 20 pixels longer than the content. Then I remembered the "Sizing Boxes" concept from stage 1. I hadn't used box-sizing: border-box;, so when the JS was setting the height of my sidebar, it was setting the height of the content. CSS was adding the height of my padding and border. I went to my .sidebar css. Turns out I had eliminated border for layout purposes, but kept padding: 10px; to keep things contained. Next time I'm using border-box, but I'm not going to re-do my entire layout now. I added padding-top: 0px; and padding-bottom: 0px; and voila, the sidebar height was the same! padding-top: 0px; didn't mess up my layout at the top because the h2 I had there had a padding and margin of its own.</p>
-			<p>The second problem: On my main page, the content is shorter than the sidebar. So when I tried out the code on that page, the JS cut off the sidebar short with contents spilling out the bottom. Because I was using template inheritance and the JavaScript was in my base.html, I decided to just not wrap the content on that page in a .stage div so the JavaScript wouldn't do anything. This later became a non-issue when I collapsed the tables of contents in my sidebars.</p>
-			<p>That brings me to the third thing on my list: Collapsing my tables of contents. They were too long. You can see what they looked like at <a target="_blank" href="http://stage-four.appspot.com">http://stage-four.appspot.com</a>. You get lost in them, defeating the point of a table of contents, which is to find things quickly.</p>
-			<p>I looked for simple solutions to collapsing lists and everything I found was either too complicated or wouldn't work for me. I decided to use jQueryui's accordion. The documentation is available here: https://jqueryui.com/accordion/ and here http://api.jqueryui.com/accordion/. Accordion isn't designed specifically for lists, which my tables of contents were, but it works, abstracting away a lot of the complexity of collapsing lists.</p>
+			<p>I changed the names of the selectors to "<code>.sidebar</code>" and "<code>.stage</code>", added a <code>.stage</code> <code>div</code> that wrapped around all of my content, and put the code in my <code>script.js</code> file.</p>
+			<p>It worked, sort of. I had two problems: First, The length of the sidebar was about 20 pixels longer than the content. Then I remembered the "Sizing Boxes" concept from stage 1. I hadn't used <code>box-sizing: border-box;</code>, so when the JS was setting the height of my sidebar, it was setting the height of the content. CSS was adding the height of my padding and border. I went to my <code>.sidebar</code> CSS. Turns out I had eliminated border for layout purposes, but kept <code>padding: 10px;</code> to keep things contained. Next time I'm using <code>border-box</code>, but I'm not going to re-do my entire layout now. I added <code>padding-top: 0px;</code> and <code>padding-bottom: 0px;</code> and voila, the sidebar height was the same! <code>padding-top: 0px;</code> didn't mess up my layout at the top because the h2 I had there had a padding and margin of its own.</p>
+			<p>The second problem: On my main page, the content is shorter than the sidebar. So when I tried out the code on that page, the JS cut off the sidebar short with contents spilling out the bottom. Because I was using template inheritance and the JavaScript was in my base.html, I decided to just not wrap the content on that page in a <code>.stage</code> <code>div</code> so the JavaScript wouldn't do anything. This later became a non-issue when I collapsed the tables of contents in my sidebars.</p>
+			<p>That brings me to the third thing on my list: Collapsing my tables of contents. They were too long. You can see what they looked like at <a target="_blank" href="http://stage-four.appspot.com">http://stage-four.appspot.com</a>. You get lost in them, defeating the purpose of a table of contents, which is to find things quickly.</p>
+			<p>I looked for simple solutions to collapsing lists and everything I found was either too complicated or wouldn't work for me. I decided to use jQueryui's Zccordion. The documentation is available here: <a target="_blank" href="https://jqueryui.com/accordion/">https://jqueryui.com/accordion/</a> and here <a target="_blank" href= "http://api.jqueryui.com/accordion/">http://api.jqueryui.com/accordion/</a>. Accordion isn't designed specifically for lists, which my tables of contents were, but it works, abstracting away a lot of the complexity of collapsing lists.</p>
 			<p>The markup for accordion uses pairs of headers and content panels:</p>
 <pre><code>&lt;div id=&quot;accordion&quot;&gt;
 	&lt;h3&gt;First header&lt;/h3&gt;
@@ -1170,7 +1170,7 @@ $("#side").height( $("#main").height() );
 	 &lt;h3&gt;Second header&lt;/h3&gt;
 	&lt;div&gt;Second content panel&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-			<p>First, I had to add the jqueryui library to my pages, which I did in my &lt;head&gt; section: &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js&quot;&gt;&lt;/script&gt;. I chose a Google hosted version because of Google's Content Delivery Network, which speeds up downloads, and because of better caching. If I hosted the file myself the user would have to download it at least once. Using Google's CDN, the browser may recognize that it already has cached the same exact copy and not waste the resources to download it again.</p>
+			<p>First, I had to add the jqueryui library to my pages, which I did in my <code>&lt;head&gt;</code> section: <code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js&quot;&gt;&lt;/script&gt;</code>. I chose a Google hosted version because of Google's Content Delivery Network, which speeds up downloads, and because of better caching. If I hosted the file myself the user would have to download it at least once. Using Google's CDN, the browser may recognize that it already has cached the same exact copy and not waste the resources to download it again.</p>
 			<p>Then, I added some code to my script.js file:</p>
 <pre><code>$(function() {
 	$( "#accordion" ).accordion({
@@ -1180,7 +1180,7 @@ $("#side").height( $("#main").height() );
 	animate: 100
 	});
 });</code></pre>
-			<p>The first two lines are all you need to get accordion working. The rest are options: heightStyle: "content" sets each panel to be only as tall as its content. collapsible: true and active: false, set the default state of the accordion to be collapsed. animate: 100 sets the speed of the animation to be fairly fast -- I don't like waiting around for animations.</p>
+			<p>The first two lines are all you need to get accordion working. The rest are options: <code>heightStyle: "content"</code> sets each panel to be only as tall as its content. <code>collapsible: true</code> and <code>active: false</code>, set the default state of the accordion to be collapsed. <code>animate: 100</code> sets the speed of the animation to be fairly fast -- I don't like waiting around for animations.</p>
 			<p>So far I'm happy with my choice of jQueryui Accordion, but I'd like to get actual collapsing lists to work for me in the future.</p></div>
 	</div>
 	</div><!--lesson div-->
